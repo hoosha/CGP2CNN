@@ -31,6 +31,8 @@ class CGP2CNN(chainer.Chain):
         super(CGP2CNN, self).__init__()
         self.cgp = cgp
         self.pool_size = 2
+        self.n_in = 3
+        self.n_out= 32
         links = []
         i = 1
         for name, in1, in2 in self.cgp:
@@ -47,13 +49,19 @@ class CGP2CNN(chainer.Chain):
                     links += [(name+'_'+str(i), L.BatchNormalization(n_out))]                        
             elif name == 'pool_max':
                 links += [('_'+name+'_'+str(i), F.MaxPooling2D(self.pool_size, self.pool_size, 0, False))]
+            elif name == 'pool_max_const':
+                links += [('_'+name+'_'+str(i), F.MaxPooling2D(3, 1, 1, True))]
             elif name == 'pool_ave':
                 links += [('_'+name+'_'+str(i), F.AveragePooling2D(self.pool_size, self.pool_size, 0, False))]
+            elif name == 'pool_ave_const':
+                links += [('_'+name+'_'+str(i), F.AveragePooling2D(3, 1, 1, True))]
             elif name == 'ReLU':
                 links += [('_'+name+'_'+str(i), F.ReLU())]
             elif name == 'tanh':
                 links += [('_'+name+'_'+str(i), F.Tanh())]
             elif name == 'concat':
+                links += [('_'+name+'_'+str(i), F.Concat())]
+            elif name == 'sum':
                 links += [('_'+name+'_'+str(i), F.Concat())]
             elif name == 'full':
                 links += [(name+'_'+str(i), L.Linear(None, 10))]
@@ -77,12 +85,12 @@ class CGP2CNN(chainer.Chain):
                 x = getattr(self, name)(outputs[self.cgp[nodeID][1]])
                 outputs[nodeID] = x
                 nodeID += 1
-            elif name.startswith('_') and not 'concat' in name:
-                x = f(outputs[self.cgp[nodeID][1]])
-                outputs[nodeID] = x
-                nodeID += 1
             elif 'batch' in name:
                 x = getattr(self, name)(outputs[self.cgp[nodeID][1]], not self.train)
+                outputs[nodeID] = x
+                nodeID += 1
+            elif name.startswith('_') and not 'concat' in name and not 'sum' in name:
+                x = f(outputs[self.cgp[nodeID][1]])
                 outputs[nodeID] = x
                 nodeID += 1
             elif 'concat' in name:
@@ -105,6 +113,77 @@ class CGP2CNN(chainer.Chain):
                         x = f(y, outputs[self.cgp[nodeID][2]])
                 else:
                     x = f(outputs[self.cgp[nodeID][1]], outputs[self.cgp[nodeID][2]])
+                outputs[nodeID] = x
+                nodeID += 1
+            elif 'sum' in name:
+                if outputs[self.cgp[nodeID][1]].shape[2] != outputs[self.cgp[nodeID][2]].shape[2]: # 画像サイズに関するチェック
+                    ratio = outputs[self.cgp[nodeID][1]].shape[2] / outputs[self.cgp[nodeID][2]].shape[2]
+                    if ratio < 1:
+                        ratio = outputs[self.cgp[nodeID][2]].shape[2] / outputs[self.cgp[nodeID][1]].shape[2]
+                        ratio = ratio / 2
+                        ratio = int(ratio)
+                        y = outputs[self.cgp[nodeID][2]]
+                        for p in range(ratio):
+                            y = F.max_pooling_2d(y, self.pool_size, self.pool_size, 0, False)
+                        ratio = outputs[self.cgp[nodeID][1]].shape[1] / outputs[self.cgp[nodeID][2]].shape[1] #channelに関するチェック
+                        if ratio < 1:
+                            ratio = outputs[self.cgp[nodeID][2]].shape[1] / outputs[self.cgp[nodeID][1]].shape[1]
+                            ratio = ratio / 2
+                            ratio = int(ratio)
+                            z = outputs[self.cgp[nodeID][1]]
+                            for p in range(ratio):
+                                z = F.concat((z, z * 0), axis=1)
+                            x = y + z
+                        elif ratio > 1:
+                            ratio = ratio / 2
+                            ratio = int(ratio)
+                            for p in range(ratio):
+                                y = F.concat((y, y * 0), axis=1)
+                            x = y + outputs[self.cgp[nodeID][1]]
+                        else:
+                            x = outputs[self.cgp[nodeID][1]] + y
+                    else:
+                        ratio = ratio / 2
+                        ratio = int(ratio)
+                        y = outputs[self.cgp[nodeID][1]]
+                        for p in range(ratio):
+                            y = F.max_pooling_2d(y, self.pool_size, self.pool_size, 0, False)
+                        ratio = outputs[self.cgp[nodeID][1]].shape[1] / outputs[self.cgp[nodeID][2]].shape[1] #channelに関するチェック
+                        if ratio < 1:
+                            ratio = outputs[self.cgp[nodeID][2]].shape[1] / outputs[self.cgp[nodeID][1]].shape[1]
+                            ratio = ratio / 2
+                            ratio = int(ratio)
+                            for p in range(ratio):
+                                y = F.concat((y, y * 0), axis=1)
+                            x = y + outputs[self.cgp[nodeID][2]]
+                        elif ratio > 1:
+                            ratio = ratio / 2
+                            ratio = int(ratio)
+                            z = outputs[self.cgp[nodeID][2]]
+                            for p in range(ratio):
+                                z = F.concat((z, z * 0), axis=1)
+                            x = y + z
+                        else:
+                            x = outputs[self.cgp[nodeID][2]] + y
+                else:
+                    ratio = outputs[self.cgp[nodeID][1]].shape[1] / outputs[self.cgp[nodeID][2]].shape[1] #channelに関するチェック
+                    if ratio < 1:
+                        ratio = outputs[self.cgp[nodeID][2]].shape[1] / outputs[self.cgp[nodeID][1]].shape[1]
+                        ratio = ratio / 2
+                        ratio = int(ratio)
+                        y = outputs[self.cgp[nodeID][1]]
+                        for p in range(ratio):
+                            y = F.concat((y, y * 0), axis=1)
+                        x = y + outputs[self.cgp[nodeID][2]]
+                    elif ratio > 1:
+                        ratio = ratio / 2
+                        ratio = int(ratio)
+                        y = outputs[self.cgp[nodeID][2]]
+                        for p in range(ratio):
+                            y = F.concat((y, y * 0), axis=1)
+                        x = y + outputs[self.cgp[nodeID][1]]
+                    else:
+                        x = outputs[self.cgp[nodeID][1]] + outputs[self.cgp[nodeID][2]]
                 outputs[nodeID] = x
                 nodeID += 1
             else:
