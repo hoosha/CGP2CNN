@@ -142,21 +142,20 @@ class CNN_train():
             elapsed_time = end - start
             throughput = self.train_data_num / elapsed_time
             print('train mean loss={}, train accuracy={}, time={}, throughput={} images/sec'.format(sum_loss / self.train_data_num, sum_accuracy / self.train_data_num, elapsed_time, throughput))
-        # 未知画像による検証
-        sum_accuracy = 0
-        sum_loss = 0
-        for i in six.moves.range(0, self.test_data_num, batchsize):
-            x = chainer.Variable(cuda.to_gpu(self.x_test[i:i + batchsize]))
-            t = chainer.Variable(cuda.to_gpu(self.y_test[i:i + batchsize]))
-            loss = model(x, t)
-            sum_loss += float(loss.data) * len(t.data)
-            sum_accuracy += float(model.accuracy.data) * len(t.data)
-        print('test  mean loss={}, test accuracy={}'.format(sum_loss / self.test_data_num, sum_accuracy / self.test_data_num))
+            # 検証画像による検証
+            sum_accuracy = 0
+            sum_loss = 0
+            for i in six.moves.range(0, self.valid_data_num, batchsize):
+                x = chainer.Variable(cuda.to_gpu(self.x_valid[i:i + batchsize]))
+                t = chainer.Variable(cuda.to_gpu(self.y_valid[i:i + batchsize]))
+                loss = model(x, t)
+                sum_loss += float(loss.data) * len(t.data)
+                sum_accuracy += float(model.accuracy.data) * len(t.data)
+            print('valid  mean loss={}, valid accuracy={}'.format(sum_loss / self.valid_data_num, sum_accuracy / self.valid_data_num))
         # モデルの保存
         model.to_cpu()
         serializers.save_npz("mymodel.model", model)
-
-        return sum_accuracy / self.test_data_num
+        return sum_accuracy / self.valid_data_num
 
 
 
@@ -189,14 +188,13 @@ cgp.append(['ReLU',2,0])      #3
 cgp.append(['conv3',3,0])     #4
 cgp.append(['conv5',3,0])     #5
 cgp.append(['conv7',3,4])     #6
-cgp.append(['pool_max_const',6,0])  #7
+cgp.append(['pool_max',6,0])  #7
 cgp.append(['ReLU',4,0])     #8
 cgp.append(['ReLU',5,0])     #9 
 cgp.append(['ReLU',7,0])     #10
 cgp.append(['concat',8,9])   #11
-cgp.append(['sum',11,10])     #12
+cgp.append(['concat',11,10])     #12
 cgp.append(['full',12,11])    #13
 
 temp = CNN_train('cifar10')
 acc = temp(cgp, 1)
-print('acc', acc)
