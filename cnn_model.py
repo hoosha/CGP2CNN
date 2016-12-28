@@ -42,11 +42,11 @@ class CGP2CNN(chainer.Chain):
                 links += [(name+'_'+str(i), L.Convolution2D(None, n_out, 5, pad=2))]
             elif name == 'conv7':
                 links += [(name+'_'+str(i), L.Convolution2D(None, n_out, 7, pad=3))]
-            elif name == 'batch':
-                if in1 == 0:
-                    links += [(name+'_'+str(i), L.BatchNormalization(n_in))]
-                else:
-                    links += [(name+'_'+str(i), L.BatchNormalization(n_out))]                        
+            # elif name == 'batch':
+            #     if in1 == 0:
+            #         links += [(name+'_'+str(i), L.BatchNormalization(n_in))]
+            #     else:
+            #         links += [(name+'_'+str(i), L.BatchNormalization(n_out))]                        
             elif name == 'pool_max':
                 links += [('_'+name+'_'+str(i), F.MaxPooling2D(self.pool_size, self.pool_size, 0, False))]
             elif name == 'pool_max_const':
@@ -56,8 +56,16 @@ class CGP2CNN(chainer.Chain):
             elif name == 'pool_ave_const':
                 links += [('_'+name+'_'+str(i), F.AveragePooling2D(3, 1, 1, True))]
             elif name == 'ReLU':
+                if in1 == 0:
+                    links += [('batch_'+str(i), L.BatchNormalization(n_in))]
+                else:
+                    links += [('batch_'+str(i), L.BatchNormalization(n_out))]
                 links += [('_'+name+'_'+str(i), F.ReLU())]
             elif name == 'tanh':
+                if in1 == 0:
+                    links += [('batch_'+str(i), L.BatchNormalization(n_in))]
+                else:
+                    links += [('batch_'+str(i), L.BatchNormalization(n_out))]
                 links += [('_'+name+'_'+str(i), F.Tanh())]
             elif name == 'concat':
                 links += [('_'+name+'_'+str(i), F.Concat())]
@@ -87,6 +95,8 @@ class CGP2CNN(chainer.Chain):
                 nodeID += 1
             elif 'batch' in name:
                 x = getattr(self, name)(outputs[self.cgp[nodeID][1]], not self.train)
+            elif 'ReLU' in name or 'tanh' in name:
+                x = f(x)
                 outputs[nodeID] = x
                 nodeID += 1
             elif name.startswith('_') and not 'concat' in name and not 'sum' in name:
