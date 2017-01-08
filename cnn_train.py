@@ -4,197 +4,186 @@
 import chainer
 from chainer import cuda
 from chainer import computational_graph
-import chainer.functions as F
 import chainer.links as L
-import math
-from chainer import report, training, Chain, datasets, iterators, optimizers
 import six
 import time
 import numpy as np
-from chainer.training import extensions
-from chainer.datasets import tuple_dataset
-import argparse
-from chainer.functions.loss import softmax_cross_entropy
-from chainer.functions.evaluation import accuracy
-import sys
-import pickle
-import matplotlib.pyplot as plt
 from chainer import serializers
-from sklearn.datasets import fetch_mldata
-#自作クラスのインポート
+import gc
+
+# 自作クラスのインポート
 from cnn_model import CGP2CNN
 
-# cifar10のロードに使用
-def unpickle(file):
-    fp = open(file, 'rb')
-    if sys.version_info.major == 2:
-        data = pickle.load(fp)
-    elif sys.version_info.major == 3:
-        data = pickle.load(fp, encoding='latin-1')                                                                                    
-    fp.close()
-    return data
 
 # __init__: datasetのロード
 # __call__: cgp(list)からCNNの構築，CNNの学習
-# valid_data_ratio: 全学習データに対するvalidation data の割合(e.g. ratio=0.2 の場合，train=40000, valid=10000 )
 class CNN_train():
-    def __init__(self, dataset_name, valid_data_ratio=0.2):
-        data = None
-        self.x_train = None
-        self.x_valid = None
-        label = []
-        self.y_train = None
-        self.y_valid = None
-        self.train_data_num = None
-        self.valid_data_num = None
-        self.test_data_num  = None
+    # validation: [True]  モデル検証モード（trainデータを分割して学習データとテストデータを作成，GPでの評価用）
+    #             [False] テストモード（全trainデータを学習データにし，testをテストデータにして性能評価，モデル最終評価用）
+    # valid_data_ratio: モデル検証モードの際の，学習データとテストデータの分割の割合
+    #                   (e.g., 全学習データ数=60000, ratio=0.2 の場合，train=40000, test=10000)
+    # verbose: 表示のフラグ
+    def __init__(self, dataset_name, validation=True, valid_data_ratio=0.1, verbose=True):
+        self.verbose = verbose
+
         # load dataset
-        if dataset_name == 'cifar10':
-            for i in range(1,6):
-                data_dic = unpickle("cifar-10-batches-py/data_batch_{}".format(i))
-                if i == 1:
-                    data = data_dic['data']
-                else:
-                    data = np.vstack((data, data_dic['data']))
-                label += data_dic['labels']
-            test_data_dic = unpickle("cifar-10-batches-py/test_batch")
-            self.x_test = test_data_dic['data']
-            self.x_test = self.x_test.reshape(len(self.x_test),3, 32, 32)
-            self.y_test = np.array(test_data_dic['labels'])
-            N = len(data)
-            N = int(N * valid_data_ratio)
-            self.x_valid, self.x_train = np.split(data, [N])
-            self.x_train = self.x_train.reshape(len(self.x_train),3, 32, 32)
-            self.x_valid = self.x_valid.reshape(len(self.x_valid),3, 32, 32)
-            self.y_valid, self.y_train = np.split(label, [N])
-            self.x_train = self.x_train.astype(np.float32)
-            self.x_valid = self.x_valid.astype(np.float32)
-            self.x_test = self.x_test.astype(np.float32)
-            self.x_train /= 255
-            self.x_valid /= 255
-            self.x_test /= 255
-            label = np.array(label)                                                                         
-            self.y_train = self.y_train.astype(np.int32)
-            self.y_valid = self.y_valid.astype(np.int32)
-            self.y_test = self.y_test.astype(np.int32)
-            self.train_data_num = len(self.x_train)
-            self.valid_data_num = len(self.x_valid)
-            self.test_data_num = len(self.x_test)
-            print('data shape:', self.x_train.shape)
-            print('train data num:', self.train_data_num)
-            print('valid data num:', self.valid_data_num)
-            print('test  data num:', self.test_data_num)
-        elif dataset_name == 'mnist':
-            mnist = fetch_mldata('MNIST original')
-            mnist.data   = mnist.data.astype(np.float32)
-            mnist.data  /= 255     # 0-1のデータに変換
-            mnist.target = mnist.target.astype(np.int32)
-            N = 60000
-            data, self.x_test = np.split(mnist.data,   [N])
-            label, self.y_test = np.split(mnist.target, [N])
-            N = len(data)
-            N = int(N * valid_data_ratio)
-            self.x_valid, self.x_train = np.split(data, [N])
-            self.y_valid, self.y_train = np.split(label, [N])
-            self.x_train = self.x_train.reshape(len(self.x_train), 1, 28, 28)
-            self.x_valid = self.x_valid.reshape(len(self.x_valid), 1, 28, 28)
-            self.x_test = self.x_test.reshape(len(self.x_test), 1, 28, 28)
-            self.train_data_num = len(self.x_train)
-            self.valid_data_num = len(self.x_valid)
-            self.test_data_num = len(self.x_test)
-            print('data shape:', self.x_train.shape)
-            print('train data num  :', self.train_data_num)
-            print('valid data num  :', self.valid_data_num)
-            print('test data num   :', self.test_data_num)
+        if dataset_name == 'cifar10' or dataset_name == 'cifar100' or dataset_name == 'mnist':
+            if dataset_name == 'cifar10':
+                self.n_class = 10
+                self.channel = 3
+                train, test = chainer.datasets.get_cifar10(withlabel=True, ndim=3, scale=1.0)
+            elif dataset_name == 'cifar100':
+                self.n_class = 100
+                self.channel = 3
+                train, test = chainer.datasets.get_cifar100(withlabel=True, ndim=3, scale=1.0)
+            else:    # mnist
+                self.n_class = 10
+                self.channel = 1
+                train, test = chainer.datasets.get_mnist(withlabel=True, ndim=3, scale=1.0)
+
+            # モデル検証モード
+            if validation:
+                # split into train and validation data
+                np.random.seed(2016)
+                order = np.random.permutation(len(train))
+                np.random.seed()
+                if self.verbose:
+                    print('data split order: ', order)
+                train_size = int(len(train) * (1. - valid_data_ratio))
+
+                # train data
+                self.x_train, self.y_train = train[order[:train_size]][0], train[order[:train_size]][1]
+                # test data
+                self.x_test, self.y_test = train[order[train_size:]][0], train[order[train_size:]][1]
+            # テストモード
+            else:
+                # train data
+                self.x_train, self.y_train = train[range(len(train))][0], train[range(len(train))][1]
+                # test data
+                self.x_test, self.y_test = test[range(len(test))][0], test[range(len(test))][1]
+
         else:
-            print('input dataset_name at CNN_train()')
+            print('Invalid input dataset name at CNN_train()')
             exit(1)
 
-    def __call__(self, cgp, gpuID, epoch=200, batchsize=256):
-        print('GPUID    :', gpuID)
-        print('epoch    :', epoch)
-        print('batchsize:', batchsize)
-        model = L.Classifier(CGP2CNN(cgp))
+        # data size
+        self.train_data_num = len(self.x_train)
+        self.test_data_num = len(self.x_test)
+        if self.verbose:
+            print('train data shape:', self.x_train.shape)
+            print('test data shape :', self.x_test.shape)
+
+    def __call__(self, cgp, gpuID, epoch_num=200, batchsize=256,
+                 comp_graph='comp_graph.dot', out_model='mymodel.model', init_model=None):
+        if self.verbose:
+            print('\tGPUID    :', gpuID)
+            print('\tepoch_num:', epoch_num)
+            print('\tbatchsize:', batchsize)
+
         chainer.cuda.get_device(gpuID).use()  # Make a specified GPU current
-        model.to_gpu(gpuID)                   # Copy the model to the GPU
+        if init_model is None:
+            # model = L.Classifier(CGP2CNN(cgp, self.n_class))
+            model = CGP2CNN(cgp, self.n_class, n_in=self.channel) #パラメータ数を出すためこちらに変更
+        else:
+            if self.verbose:
+                print('\tLoad model from', init_model)
+            serializers.load_npz(init_model, model)
+        model.to_gpu(gpuID)
         optimizer = chainer.optimizers.Adam()
+        # optimizer = chainer.optimizers.NesterovAG()
+        # optimizer = chainer.optimizers.RMSprop()
+        # optimizer = chainer.optimizers.MomentumSGD()
+        # optimizer = chainer.optimizers.AdaGrad()
         optimizer.setup(model)
-        for epoch in six.moves.range(1, epoch+1):
-            print('epoch', epoch)
+        optimizer.add_hook(chainer.optimizer.WeightDecay(1e-4))
+
+        for epoch in six.moves.range(1, epoch_num+1):
+            if self.verbose:
+                print('\tepoch', epoch)
             perm = np.random.permutation(self.train_data_num)
-            sum_accuracy = 0
-            sum_loss = 0
+            train_accuracy = train_loss = 0
             start = time.time()
             for i in six.moves.range(0, self.train_data_num, batchsize):
                 x = chainer.Variable(cuda.to_gpu(self.x_train[perm[i:i + batchsize]]))
                 t = chainer.Variable(cuda.to_gpu(self.y_train[perm[i:i + batchsize]]))
                 optimizer.update(model, x, t)
 
-                if epoch == 1 and i == 0:
-                    with open('graph.dot', 'w') as o:
+                if comp_graph is not None and epoch == 1 and i == 0:
+                    with open(comp_graph, 'w') as o:
                         g = computational_graph.build_computational_graph((model.loss, ))
                         o.write(g.dump())
-                    print('CNN graph generated')
+                        if self.verbose:
+                            print('\tCNN graph generated.')
 
-                sum_loss += float(model.loss.data) * len(t.data)
-                sum_accuracy += float(model.accuracy.data) * len(t.data)
-            end = time.time()
-            elapsed_time = end - start
+                train_loss += float(model.loss.data) * len(t.data)
+                train_accuracy += float(model.accuracy.data) * len(t.data)
+            elapsed_time = time.time() - start
             throughput = self.train_data_num / elapsed_time
-            print('train mean loss={}, train accuracy={}, time={}, throughput={} images/sec'.format(sum_loss / self.train_data_num, sum_accuracy / self.train_data_num, elapsed_time, throughput))
-            # 検証画像による検証
-            sum_accuracy = 0
-            sum_loss = 0
-            for i in six.moves.range(0, self.valid_data_num, batchsize):
-                x = chainer.Variable(cuda.to_gpu(self.x_valid[i:i + batchsize]))
-                t = chainer.Variable(cuda.to_gpu(self.y_valid[i:i + batchsize]))
-                loss = model(x, t)
-                sum_loss += float(loss.data) * len(t.data)
-                sum_accuracy += float(model.accuracy.data) * len(t.data)
-            print('valid  mean loss={}, valid accuracy={}'.format(sum_loss / self.valid_data_num, sum_accuracy / self.valid_data_num))
-        # モデルの保存
+            if self.verbose:
+                print('\ttrain mean loss={}, train accuracy={}, time={}, throughput={} images/sec, paramNum={}'.format(train_loss / self.train_data_num, train_accuracy / self.train_data_num, elapsed_time, throughput, model.param_num))
+            # テストデータへの適用
+            if self.verbose:
+                test_accuracy, test_loss = self.__test(model, batchsize)
+                print('\tvalid  mean loss={}, valid accuracy={}'.format(test_loss / self.test_data_num, test_accuracy / self.test_data_num))
+
+        test_accuracy, test_loss = self.__test(model, batchsize)
+
         model.to_cpu()
-        serializers.save_npz("mymodel.model", model)
-        return sum_accuracy / self.valid_data_num
+        if out_model is not None:
+            serializers.save_npz(out_model, model)
+        # del model
+        # gc.collect()
+        return test_accuracy / self.test_data_num
+
+    def __test(self, model, batchsize):
+        test_accuracy = test_loss = 0
+        for i in six.moves.range(0, self.test_data_num, batchsize):
+            x = chainer.Variable(cuda.to_gpu(self.x_test[i:i + batchsize]))
+            t = chainer.Variable(cuda.to_gpu(self.y_test[i:i + batchsize]))
+            loss = model(x, t)
+            test_loss += float(loss.data) * len(t.data)
+            test_accuracy += float(model.accuracy.data) * len(t.data)
+        return test_accuracy, test_loss
 
 
+if __name__ == '__main__':
+    # 確認用
+    # cgp = []
+    # cgp.append(['Input',0,0])     #0
+    # cgp.append(['conv3',0,0])     #1
+    # cgp.append(['batch',1,0])     #2
+    # cgp.append(['ReLU',2,0])      #3
+    # cgp.append(['conv3',3,0])     #4
+    # cgp.append(['conv5',3,0])     #5
+    # cgp.append(['conv7',3,4])     #6
+    # cgp.append(['pool_max',6,0])  #7
+    # cgp.append(['batch',4,0])     #8
+    # cgp.append(['batch',5,0])     #9
+    # cgp.append(['batch',7,0])     #10
+    # cgp.append(['ReLU',10,0])     #11
+    # cgp.append(['ReLU',8,0])      #12
+    # cgp.append(['ReLU',9,0])      #13
+    # cgp.append(['concat',12,13])  #14
+    # cgp.append(['sum',14,11])     #15
+    # cgp.append(['full',15,12])    #16
 
+    #cgp = []
+    #cgp.append(['Input',0,0])     #0
+    #cgp.append(['conv3',0,0])     #1
+    #cgp.append(['ReLU',1,0])     #2
+    #cgp.append(['ReLU',2,0])      #3
+    #cgp.append(['conv3',3,0])     #4
+    #cgp.append(['conv5',3,0])     #5
+    #cgp.append(['conv7',3,4])     #6
+    #cgp.append(['pool_max',6,0])  #7
+    #cgp.append(['ReLU',4,0])     #8
+    #cgp.append(['ReLU',5,0])     #9
+    #cgp.append(['ReLU',7,0])     #10
+    #cgp.append(['concat',8,9])   #11
+    #cgp.append(['concat',11,10])     #12
+    #cgp.append(['full',12,11])    #13
 
-# 確認用
-# cgp = []
-# cgp.append(['Input',0,0])     #0
-# cgp.append(['conv3',0,0])     #1
-# cgp.append(['batch',1,0])     #2
-# cgp.append(['ReLU',2,0])      #3
-# cgp.append(['conv3',3,0])     #4
-# cgp.append(['conv5',3,0])     #5
-# cgp.append(['conv7',3,4])     #6
-# cgp.append(['pool_max',6,0])  #7
-# cgp.append(['batch',4,0])     #8
-# cgp.append(['batch',5,0])     #9 
-# cgp.append(['batch',7,0])     #10
-# cgp.append(['ReLU',10,0])     #11
-# cgp.append(['ReLU',8,0])      #12
-# cgp.append(['ReLU',9,0])      #13
-# cgp.append(['concat',12,13])  #14
-# cgp.append(['sum',14,11])     #15
-# cgp.append(['full',15,12])    #16
-
-cgp = []
-cgp.append(['Input',0,0])     #0
-cgp.append(['conv3',0,0])     #1
-cgp.append(['ReLU',1,0])     #2
-cgp.append(['ReLU',2,0])      #3
-cgp.append(['conv3',3,0])     #4
-cgp.append(['conv5',3,0])     #5
-cgp.append(['conv7',3,4])     #6
-cgp.append(['pool_max',6,0])  #7
-cgp.append(['ReLU',4,0])     #8
-cgp.append(['ReLU',5,0])     #9 
-cgp.append(['ReLU',7,0])     #10
-cgp.append(['concat',8,9])   #11
-cgp.append(['concat',11,10])     #12
-cgp.append(['full',12,11])    #13
-
-temp = CNN_train('cifar10')
-acc = temp(cgp, 1)
+    cgp = [['input', 0, 0], ['ConvBlock3', 0, 0], ['ReLU', 1, 0], ['ConvBlock3', 0, 0], ['ConvBlock3', 2, 1], ['sum', 3, 4], ['full', 5, 6]]
+    # cgp = [['input', 0, 0], ['ConvBlock3', 0, 0], ['pool_max', 0, 0], ['ConvBlock3', 1, 1], ['sum', 3, 2], ['full', 4, 6]]
+    temp = CNN_train('cifar10')
+    acc = temp(cgp, 0)
