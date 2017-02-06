@@ -1,7 +1,8 @@
+
 \documentclass[sigconf]{acmart}
 
 \usepackage{booktabs} % For formal tables
-
+\usepackage{subcaption}
 
 % Copyright
 %\setcopyright{none}
@@ -59,10 +60,6 @@
 \newcommand{\usrc}[1]{\note[UserC]{\color{green} #1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\usepackage[hang,small,bf]{caption}
-\usepackage[subrefformat=parens]{subcaption}
-%\captionsetup{compatibility=false}
-
 
 %% DOI
 %\acmDOI{10.475/123_4}
@@ -71,16 +68,12 @@
 %\acmISBN{123-4567-24-567/08/06}
 %
 %%Conference
-%\acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
-%  Paso, Texas USA} 
-%\acmYear{1997}
-%\copyrightyear{2016}
-
-%\acmPrice{15.00}
-
 \acmConference[GECCO '17]{the Genetic and Evolutionary Computation Conference 2017}{July 15--19, 2017}{Berlin, Germany}
 \acmYear{2017}
 \copyrightyear{2017}
+
+%\acmPrice{15.00}
+
 
 
 \begin{document}
@@ -118,7 +111,7 @@
 
 \author{1st Autor}
 \affiliation{%
-  \institution{Institution}
+  \institution{Institution line}
   \streetaddress{Street Adress}
   \city{City} 
   \country{Country} 
@@ -128,7 +121,7 @@
 %
 \author{2nd Autor}
 \affiliation{%
-  \institution{Institution}
+  \institution{Institution line}
   \streetaddress{Street Adress}
   \city{City} 
   \country{Country} 
@@ -138,7 +131,7 @@
 %
 \author{3rd Autor}
 \affiliation{%
-  \institution{Institution}
+  \institution{Institution line}
   \streetaddress{Street Adress}
   \city{City} 
   \country{Country} 
@@ -151,7 +144,7 @@
 
 
 \begin{abstract}
-Convolutional neural network (CNN), which is one of the deep learning models, has seen much success in a variety of computer vision tasks. However, designing CNN architectures still requires expert knowledge and much trial and errors. In this paper, we attempt to automatically construct the CNN architectures for an image classification task based on Cartesian genetic programming (CGP). In our method, we adopt the highly-functional modules such as convolutional blocks and tensor concatenation as the node functions in CGP. The CNN structure and connectivity represented by the CGP encoding method are optimized to maximize the validation accuracy. To evaluate the proposed method, we constructed the CNN architecture for the image classification task with the CIFAR-10 dataset. The experimental result shows that the proposed method can automatically find the competitive CNN architecture compared with state-of-the-art models.
+The convolutional neural network (CNN), which is one of the deep learning models, has seen much success in a variety of computer vision tasks. However, designing CNN architectures still requires expert knowledge and \new{a lot of trial and error.} In this paper, we attempt to automatically construct \new{CNN} architectures for an image classification task based on Cartesian genetic programming (CGP). In our method, we adopt \new{highly functional} modules\new{,} such as convolutional blocks and tensor concatenation\new{,} as the node functions in CGP. The CNN structure and connectivity represented by the CGP encoding method are optimized to maximize the validation accuracy. To evaluate the proposed method, we constructed \new{a} CNN architecture for the image classification task with the CIFAR-10 dataset. The experimental result shows that the proposed method can \new{be used to} automatically find the competitive CNN architecture compared with state-of-the-art models.
 %Deep learning methods such as convolutional neural network(CNN) have seen much success in a variety of machine learning tasks.
 %However, designing CNN architectures still requires expert experience and many iterations.
 %In this paper, we propose a genetic programming based approach that automatically designs CNN architectures.
@@ -164,35 +157,29 @@ Convolutional neural network (CNN), which is one of the deep learning models, ha
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below. 
 %
-%\begin{CCSXML}
-%<ccs2012>
-% <concept>
-%  <concept_id>10010520.10010553.10010562</concept_id>
-%  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-%  <concept_significance>500</concept_significance>
-% </concept>
-% <concept>
-%  <concept_id>10010520.10010575.10010755</concept_id>
-%  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-%  <concept_significance>300</concept_significance>
-% </concept>
-% <concept>
-%  <concept_id>10010520.10010553.10010554</concept_id>
-%  <concept_desc>Computer systems organization~Robotics</concept_desc>
-%  <concept_significance>100</concept_significance>
-% </concept>
-% <concept>
-%  <concept_id>10003033.10003083.10003095</concept_id>
-%  <concept_desc>Networks~Network reliability</concept_desc>
-%  <concept_significance>100</concept_significance>
-% </concept>
-%</ccs2012>  
-%\end{CCSXML}
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10010147.10010178.10010205.10010206</concept_id>
+<concept_desc>Computing methodologies~Heuristic function construction</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010147.10010257.10010293.10010294</concept_id>
+<concept_desc>Computing methodologies~Neural networks</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010147.10010178.10010224.10010245</concept_id>
+<concept_desc>Computing methodologies~Computer vision problems</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
 
-%\ccsdesc[500]{Computer systems organization~Embedded systems}
-%\ccsdesc[300]{Computer systems organization~Redundancy}
-%\ccsdesc{Computer systems organization~Robotics}
-%\ccsdesc[100]{Networks~Network reliability}
+\ccsdesc[500]{Computing methodologies~Heuristic function construction}
+\ccsdesc[500]{Computing methodologies~Neural networks}
+\ccsdesc[300]{Computing methodologies~Computer vision problems}
 
 % We no longer use \terms command
 %\terms{Theory}

@@ -1,0 +1,92 @@
+This is pBibTeX, Version 0.99d-j0.33 (utf8.euc) (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: sigconf.aux
+The style file: ACM-Reference-Format.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: sigconf.bib
+Warning--I didn't find a database entry for "Miller2006"
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--no number and no volume in baker_designing_2016
+Warning--page numbers missing in both pages and numpages fields in baker_designing_2016
+Warning--empty publisher in bergstra_making_2013
+Warning--empty publisher in bergstra_algorithms_2011
+Warning--empty publisher in fernando_convolution_2016
+Warning--empty publisher in goodfellow_maxout_2013
+Warning--empty publisher in harding_evolution_2008
+Warning--empty publisher in he_delving_2015
+Warning--empty publisher in he_deep_2016
+Warning--no number and no volume in huang_densely_2016
+Warning--page numbers missing in both pages and numpages fields in huang_densely_2016
+Warning--empty publisher in hutter_sequential_2011
+Warning--empty publisher in ioffe_batch_2015
+Warning--empty publisher in kingma_adam:_2015
+Warning--no number and no volume in krizhevsky_learning_2009
+Warning--page numbers missing in both pages and numpages fields in krizhevsky_learning_2009
+Warning--empty publisher in krizhevsky_imagenet_2012
+Warning--empty publisher in lin_network_2014
+Warning--page numbers missing in both pages and numpages fields in lin_network_2014
+Warning--no number and no volume in loshchilov_cma-es_2016
+Warning--page numbers missing in both pages and numpages fields in loshchilov_cma-es_2016
+Warning--empty publisher in miller_cartesian_2000
+Warning--empty publisher in mnih_playing_2013
+Warning--page numbers missing in both pages and numpages fields in mnih_playing_2013
+Warning--empty publisher in nair_rectified_2010
+Warning--empty publisher in schaffer_combinations_1992
+Warning--no number and no volume in simonyan_very_2014
+Warning--page numbers missing in both pages and numpages fields in simonyan_very_2014
+Warning--empty publisher in snoek_practical_2012
+Warning--empty publisher in snoek_scalable_2015
+Warning--empty publisher in szegedy_going_2015
+Warning--empty publisher in tokui_chainer:_2015
+Warning--page numbers missing in both pages and numpages fields in tokui_chainer:_2015
+Warning--no number and no volume in verbancsics_generative_2013
+Warning--page numbers missing in both pages and numpages fields in verbancsics_generative_2013
+Warning--empty publisher in verbancsics_image_2015
+Warning--empty publisher in vinyals_show_2015
+Warning--empty publisher in zhang_colorful_2016
+Warning--no number and no volume in zoph_neural_2016
+Warning--page numbers missing in both pages and numpages fields in zoph_neural_2016
+You've used 39 entries,
+            5551 wiz_defined-function locations,
+            1511 strings with 23425 characters,
+and the built_in function-call counts, 44385 in all, are:
+= -- 5424
+> -- 1996
+< -- 0
++ -- 626
+- -- 688
+* -- 3389
+:= -- 4912
+add.period$ -- 195
+call.type$ -- 39
+change.case$ -- 300
+chr.to.int$ -- 39
+cite$ -- 79
+duplicate$ -- 3599
+empty$ -- 2565
+format.name$ -- 828
+if$ -- 10733
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 179
+newline$ -- 329
+num.names$ -- 312
+pop$ -- 1525
+preamble$ -- 1
+purify$ -- 495
+quote$ -- 0
+skip$ -- 1024
+stack$ -- 0
+substring$ -- 3140
+swap$ -- 382
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 546
+warning$ -- 40
+while$ -- 307
+width$ -- 0
+write$ -- 692
+is.kanji.str$ -- 0
+(There were 41 warnings)

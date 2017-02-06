@@ -20,15 +20,12 @@
 \citation{mnih_playing_2013,mnih_human-level_2015}
 \citation{lecun_gradient-based_1998}
 \citation{vinyals_show_2015,zhang_colorful_2016}
-\citation{goodfellow_generative_2014}
-\citation{zhang_colorful_2016}
-\citation{vinyals_show_2015}
 \citation{szegedy_going_2015}
 \citation{he_deep_2016}
 \citation{huang_densely_2016}
-\citation{Loshchilov2016,snoek_practical_2012}
+\citation{loshchilov_cma-es_2016,snoek_practical_2012}
 \citation{schaffer_combinations_1992,stanley_evolving_2002}
-\citation{miller_cartesian_2000,harding_evolution_2008,Miller2006}
+\citation{miller_cartesian_2000,harding_evolution_2008,miller_redundancy_2006}
 \citation{krizhevsky_learning_2009}
 \HyPL@Entry{0<</S/D>>}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.2}}
@@ -36,7 +33,7 @@
 \citation{bengio_gradient-based_2000}
 \citation{bergstra_random_2012}
 \citation{hutter_sequential_2011,snoek_practical_2012}
-\citation{Loshchilov2016}
+\citation{loshchilov_cma-es_2016}
 \citation{snoek_practical_2012}
 \citation{bergstra_algorithms_2011}
 \citation{bergstra_making_2013}
@@ -49,53 +46,59 @@
 \citation{zoph_neural_2016,baker_designing_2016}
 \citation{zoph_neural_2016}
 \citation{baker_designing_2016}
-\citation{harding_evolution_2008,Miller2006,miller_cartesian_2000}
+\citation{harding_evolution_2008,miller_redundancy_2006,miller_cartesian_2000}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{section.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Hyperparameter Optimization}{2}{subsection.2.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Evolutionary Neural Networks}{2}{subsection.2.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Reinforcement Learning Approach}{2}{subsection.2.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}CNN Architecture Design Using Cartesian Genetic Programming}{2}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Representation of CNN Architectures}{2}{subsection.3.1}}
 \citation{ioffe_batch_2015}
 \citation{nair_rectified_2010}
 \citation{he_deep_2016}
 \citation{szegedy_going_2015}
 \citation{he_deep_2016}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of our method. Our method represents the CNN architecture\new {s} \new {based on Cartegian} genetic programming. \new {The} CNN architecture is trained on a learning task \new {and assigned the validation accuracy of the trained model as the fitness}. \new {The evolutionary algorithm searches the better architectures.}\relax }}{3}{figure.caption.4}}
+\citation{miller_redundancy_2006,miller_cartesian_2000}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of our method. Our method represents \new {CNN} architectures based on Cartegian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.\relax }}{3}{figure.caption.5}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{overview}{{1}{3}{Overview of our method. Our method represents the CNN architecture\new {s} \new {based on Cartegian} genetic programming. \new {The} CNN architecture is trained on a learning task \new {and assigned the validation accuracy of the trained model as the fitness}. \new {The evolutionary algorithm searches the better architectures.}\relax }{figure.caption.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Parameter details for each layer\relax }}{3}{table.caption.6}}
-\newlabel{layer_param}{{1}{3}{Parameter details for each layer\relax }{table.caption.6}{}}
+\newlabel{overview}{{1}{3}{Overview of our method. Our method represents \new {CNN} architectures based on Cartegian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Representation of CNN Architectures}{3}{subsection.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Evolutionary Algorithm}{3}{subsection.3.2}}
-\citation{Miller2006,miller_cartesian_2000}
-\citation{he_delving_2015}
-\citation{kingma_adam:_2015}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example of a genotype and a phenotype. The genotype (Left) defines \new {the} CNN architecture (Right). \new {The max-pooling operation is inserted before the summation processing because each input feature map to the summation node is a different size.}\relax }}{4}{figure.caption.5}}
-\newlabel{genotype}{{2}{4}{Example of a genotype and a phenotype. The genotype (Left) defines \new {the} CNN architecture (Right). \new {The max-pooling operation is inserted before the summation processing because each input feature map to the summation node is a different size.}\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments and Results}{4}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{4}{subsection.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example of a genotype and a phenotype. The genotype (left) defines the CNN architecture (right). In this case, node No. 5 on the left side is \new {an inactive node.} The summation node performs \new {max pooling} to \new {the} first input so as to get the same input tensor sizes.\relax }}{4}{figure.caption.6}}
+\newlabel{genotype}{{2}{4}{Example of a genotype and a phenotype. The genotype (left) defines the CNN architecture (right). In this case, node No. 5 on the left side is \new {an inactive node.} The summation node performs \new {max pooling} to \new {the} first input so as to get the same input tensor sizes.\relax }{figure.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces ResBlock architecture.\relax }}{4}{figure.caption.7}}
 \newlabel{resblock}{{3}{4}{ResBlock architecture.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Experimental Setting}{4}{subsection.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The node functions and abbreviated symbols used in the experiments.\relax }}{4}{table.caption.8}}
+\newlabel{tbl:node_func}{{1}{4}{The node functions and abbreviated symbols used in the experiments.\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments and Results}{4}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{4}{subsection.4.1}}
+\citation{he_delving_2015}
+\citation{kingma_adam:_2015}
 \citation{he_deep_2016}
 \citation{tokui_chainer:_2015}
-\citation{he_deep_2016}
-\citation{he_deep_2016}
 \citation{goodfellow_maxout_2013}
-\citation{baker_designing_2016}
-\citation{lin_network_2013}
+\citation{lin_network_2014}
 \citation{simonyan_very_2014}
 \citation{he_deep_2016}
+\citation{baker_designing_2016}
 \citation{zoph_neural_2016}
 \citation{simonyan_very_2014}
 \citation{simonyan_very_2014}
 \citation{simonyan_very_2014}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Parameter settings for the CGP\relax }}{5}{table.caption.8}}
-\newlabel{cgp_param}{{2}{5}{Parameter settings for the CGP\relax }{table.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Results with the default scenario}{5}{subsection.4.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Comparison of error rate on CIFAR-10 dataset.\relax }}{5}{table.caption.10}}
-\newlabel{results}{{3}{5}{Comparison of error rate on CIFAR-10 dataset.\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Results with the small-data scenario}{5}{subsection.4.4}}
+\citation{he_deep_2016}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Parameter setting for the CGP\relax }}{5}{table.caption.9}}
+\newlabel{cgp_param}{{2}{5}{Parameter setting for the CGP\relax }{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Experimental Setting}{5}{subsection.4.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Comparison of error rates on the CIFAR-10 dataset (default scenario). The values of Maxout, Network in Network, ResNet, MetaQNN, and Neural Architecture Search are referred from the reference papers.\relax }}{5}{table.caption.11}}
+\newlabel{results}{{3}{5}{Comparison of error rates on the CIFAR-10 dataset (default scenario). The values of Maxout, Network in Network, ResNet, MetaQNN, and Neural Architecture Search are referred from the reference papers.\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Result of the Default Scenario}{5}{subsection.4.3}}
+\citation{he_deep_2016}
+\newlabel{modelA}{{4a}{6}{CGP-CNN (ConvSet)\relax }{figure.caption.10}{}}
+\newlabel{sub@modelA}{{a}{6}{CGP-CNN (ConvSet)\relax }{figure.caption.10}{}}
+\newlabel{modelB}{{4b}{6}{CGP-CNN (ResSet)\relax }{figure.caption.10}{}}
+\newlabel{sub@modelB}{{b}{6}{CGP-CNN (ResSet)\relax }{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The CNN architectures designed by our method on the default scenario.\relax }}{6}{figure.caption.10}}
+\newlabel{models}{{4}{6}{The CNN architectures designed by our method on the default scenario.\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Result of the Small-data Scenario}{6}{subsection.4.4}}
 \citation{simonyan_very_2014}
 \citation{he_deep_2016}
 \bibstyle{ACM-Reference-Format}
@@ -104,55 +107,50 @@
 \bibcite{bengio_gradient-based_2000}{{2}{2000}{{Bengio}}{{Bengio}}}
 \bibcite{bergstra_random_2012}{{3}{2012}{{Bergstra and Bengio}}{{Bergstra and Bengio}}}
 \bibcite{bergstra_making_2013}{{4}{2013}{{Bergstra et~al\unhbox \voidb@x \hbox {.}}}{{Bergstra, Yamins, and Cox}}}
-\bibcite{bergstra_algorithms_2011}{{5}{2011}{{Bergstra et~al\unhbox \voidb@x \hbox {.}}}{{Bergstra, Bardenet, Bengio, and Kegl}}}
+\bibcite{bergstra_algorithms_2011}{{5}{2011}{{Bergstra et~al\unhbox \voidb@x \hbox {.}}}{{Bergstra, Bardenet, Bengio, and K\'egl}}}
 \bibcite{fernando_convolution_2016}{{6}{2016}{{Fernando et~al\unhbox \voidb@x \hbox {.}}}{{Fernando, Banarse, Reynolds, Besse, Pfau, Jaderberg, Lanctot, and Wierstra}}}
-\bibcite{goodfellow_generative_2014}{{7}{2014}{{Goodfellow et~al\unhbox \voidb@x \hbox {.}}}{{Goodfellow, Pouget-Abadie, Mirza, Xu, Warde-Farley, Ozair, Courville, and Bengio}}}
-\newlabel{modelA}{{4a}{6}{CGP-CNN (A)\relax }{figure.caption.9}{}}
-\newlabel{sub@modelA}{{a}{6}{CGP-CNN (A)\relax }{figure.caption.9}{}}
-\newlabel{modelB}{{4b}{6}{CGP-CNN (B)\relax }{figure.caption.9}{}}
-\newlabel{sub@modelB}{{b}{6}{CGP-CNN (B)\relax }{figure.caption.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Architectures designed by our method.\relax }}{6}{figure.caption.9}}
-\newlabel{models}{{4}{6}{Architectures designed by our method.\relax }{figure.caption.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison of error rate with the small CIFAR-10 dataset.\relax }}{6}{table.caption.11}}
-\newlabel{results_small}{{4}{6}{Comparison of error rate with the small CIFAR-10 dataset.\relax }{table.caption.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusions}{6}{section.5}}
-\@writefile{toc}{\contentsline {section}{References}{6}{section*.14}}
-\bibcite{goodfellow_maxout_2013}{{8}{2013}{{Goodfellow et~al\unhbox \voidb@x \hbox {.}}}{{Goodfellow, Warde-Farley, Mirza, Courville, and Bengio}}}
-\bibcite{harding_evolution_2008}{{9}{2008}{{Harding}}{{Harding}}}
-\bibcite{he_delving_2015}{{10}{2015}{{He et~al\unhbox \voidb@x \hbox {.}}}{{He, Zhang, Ren, and Sun}}}
-\bibcite{he_deep_2016}{{11}{2016}{{He et~al\unhbox \voidb@x \hbox {.}}}{{He, Zhang, Ren, and Sun}}}
-\bibcite{hinton_deep_2012}{{12}{2012}{{Hinton et~al\unhbox \voidb@x \hbox {.}}}{{Hinton, Deng, Yu, Dahl, Mohamed, Jaitly, Senior, Vanhoucke, Nguyen, Sainath, and {others}}}}
-\bibcite{huang_densely_2016}{{13}{2016}{{Huang et~al\unhbox \voidb@x \hbox {.}}}{{Huang, Liu, Weinberger, and van~der Maaten}}}
-\bibcite{hutter_sequential_2011}{{14}{2011}{{Hutter et~al\unhbox \voidb@x \hbox {.}}}{{Hutter, Hoos, and Leyton-Brown}}}
-\bibcite{ioffe_batch_2015}{{15}{2015}{{Ioffe and Szegedy}}{{Ioffe and Szegedy}}}
-\bibcite{kingma_adam:_2015}{{16}{2015}{{Kingma and Ba}}{{Kingma and Ba}}}
-\bibcite{krizhevsky_learning_2009}{{17}{2009}{{Krizhevsky}}{{Krizhevsky}}}
-\bibcite{krizhevsky_imagenet_2012}{{18}{2012}{{Krizhevsky et~al\unhbox \voidb@x \hbox {.}}}{{Krizhevsky, Sutskever, and Hinton}}}
-\bibcite{lecun_gradient-based_1998}{{19}{1998}{{LeCun et~al\unhbox \voidb@x \hbox {.}}}{{LeCun, Bottou, Bengio, and Haffner}}}
-\bibcite{lin_network_2013}{{20}{2013}{{Lin et~al\unhbox \voidb@x \hbox {.}}}{{Lin, Chen, and Yan}}}
-\bibcite{miller_cartesian_2000}{{21}{2000}{{Miller and Thomson}}{{Miller and Thomson}}}
-\bibcite{mnih_playing_2013}{{22}{2013}{{Mnih et~al\unhbox \voidb@x \hbox {.}}}{{Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, and Riedmiller}}}
-\bibcite{mnih_human-level_2015}{{23}{2015}{{Mnih et~al\unhbox \voidb@x \hbox {.}}}{{Mnih, Kavukcuoglu, Silver, Rusu, Veness, Bellemare, Graves, Riedmiller, Fidjeland, Ostrovski, and {others}}}}
-\bibcite{nair_rectified_2010}{{24}{2010}{{Nair and Hinton}}{{Nair and Hinton}}}
-\bibcite{schaffer_combinations_1992}{{25}{1992}{{Schaffer et~al\unhbox \voidb@x \hbox {.}}}{{Schaffer, Whitley, and Eshelman}}}
-\bibcite{simonyan_very_2014}{{26}{2014}{{Simonyan and Zisserman}}{{Simonyan and Zisserman}}}
-\bibcite{snoek_practical_2012}{{27}{2012}{{Snoek et~al\unhbox \voidb@x \hbox {.}}}{{Snoek, Larochelle, and Adams}}}
-\bibcite{snoek_scalable_2015}{{28}{2015}{{Snoek et~al\unhbox \voidb@x \hbox {.}}}{{Snoek, Rippel, Swersky, Kiros, Satish, Sundaram, Patwary, Prabhat, and Adams}}}
-\bibcite{stanley_compositional_2007}{{29}{2007}{{Stanley}}{{Stanley}}}
-\bibcite{stanley_hypercube-based_2009}{{30}{2009}{{Stanley et~al\unhbox \voidb@x \hbox {.}}}{{Stanley, D'Ambrosio, and Gauci}}}
-\bibcite{stanley_evolving_2002}{{31}{2002}{{Stanley and Miikkulainen}}{{Stanley and Miikkulainen}}}
-\bibcite{szegedy_going_2015}{{32}{2015}{{Szegedy et~al\unhbox \voidb@x \hbox {.}}}{{Szegedy, Liu, Jia, Sermanet, Reed, Anguelov, Erhan, Vanhoucke, and Rabinovich}}}
-\bibcite{tokui_chainer:_2015}{{33}{2015}{{Tokui et~al\unhbox \voidb@x \hbox {.}}}{{Tokui, Oono, Hido, and Clayton}}}
-\bibcite{verbancsics_generative_2013}{{34}{2013}{{Verbancsics and Harguess}}{{Verbancsics and Harguess}}}
-\bibcite{verbancsics_image_2015}{{35}{2015}{{Verbancsics and Harguess}}{{Verbancsics and Harguess}}}
-\bibcite{vinyals_show_2015}{{36}{2015}{{Vinyals et~al\unhbox \voidb@x \hbox {.}}}{{Vinyals, Toshev, Bengio, and Erhan}}}
-\bibcite{zhang_colorful_2016}{{37}{2016}{{Zhang et~al\unhbox \voidb@x \hbox {.}}}{{Zhang, Isola, and Efros}}}
-\bibcite{zoph_neural_2016}{{38}{2016}{{Zoph and Le}}{{Zoph and Le}}}
+\bibcite{goodfellow_maxout_2013}{{7}{2013}{{Goodfellow et~al\unhbox \voidb@x \hbox {.}}}{{Goodfellow, Warde-Farley, Mirza, Courville, and Bengio}}}
+\bibcite{harding_evolution_2008}{{8}{2008}{{Harding}}{{Harding}}}
+\bibcite{he_delving_2015}{{9}{2015}{{He et~al\unhbox \voidb@x \hbox {.}}}{{He, Zhang, Ren, and Sun}}}
+\bibcite{he_deep_2016}{{10}{2016}{{He et~al\unhbox \voidb@x \hbox {.}}}{{He, Zhang, Ren, and Sun}}}
+\bibcite{hinton_deep_2012}{{11}{2012}{{Hinton et~al\unhbox \voidb@x \hbox {.}}}{{Hinton, Deng, Yu, Dahl, Mohamed, Jaitly, Senior, Vanhoucke, Nguyen, Sainath, and {others}}}}
+\bibcite{huang_densely_2016}{{12}{2016}{{Huang et~al\unhbox \voidb@x \hbox {.}}}{{Huang, Liu, Weinberger, and van~der Maaten}}}
+\bibcite{hutter_sequential_2011}{{13}{2011}{{Hutter et~al\unhbox \voidb@x \hbox {.}}}{{Hutter, Hoos, and Leyton-Brown}}}
+\bibcite{ioffe_batch_2015}{{14}{2015}{{Ioffe and Szegedy}}{{Ioffe and Szegedy}}}
+\bibcite{kingma_adam:_2015}{{15}{2015}{{Kingma and Ba}}{{Kingma and Ba}}}
+\bibcite{krizhevsky_learning_2009}{{16}{2009}{{Krizhevsky}}{{Krizhevsky}}}
+\bibcite{krizhevsky_imagenet_2012}{{17}{2012}{{Krizhevsky et~al\unhbox \voidb@x \hbox {.}}}{{Krizhevsky, Sutskever, and Hinton}}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison of error rates on the CIFAR-10 dataset (small-data scenario).\relax }}{7}{table.caption.12}}
+\newlabel{results_small}{{4}{7}{Comparison of error rates on the CIFAR-10 dataset (small-data scenario).\relax }{table.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The architecture of CGP-CNN (ConvSet) constructed \new {in} the small-data scenario.\relax }}{7}{figure.caption.13}}
+\newlabel{model_small}{{5}{7}{The architecture of CGP-CNN (ConvSet) constructed \new {in} the small-data scenario.\relax }{figure.caption.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}}
+\@writefile{toc}{\contentsline {section}{References}{7}{section*.15}}
+\bibcite{lecun_gradient-based_1998}{{18}{1998}{{LeCun et~al\unhbox \voidb@x \hbox {.}}}{{LeCun, Bottou, Bengio, and Haffner}}}
+\bibcite{lin_network_2014}{{19}{2014}{{Lin et~al\unhbox \voidb@x \hbox {.}}}{{Lin, Chen, and Yan}}}
+\bibcite{loshchilov_cma-es_2016}{{20}{2016}{{Loshchilov and Hutter}}{{Loshchilov and Hutter}}}
+\bibcite{miller_redundancy_2006}{{21}{2006}{{Miller and Smith}}{{Miller and Smith}}}
+\bibcite{miller_cartesian_2000}{{22}{2000}{{Miller and Thomson}}{{Miller and Thomson}}}
+\bibcite{mnih_playing_2013}{{23}{2013}{{Mnih et~al\unhbox \voidb@x \hbox {.}}}{{Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, and Riedmiller}}}
+\bibcite{mnih_human-level_2015}{{24}{2015}{{Mnih et~al\unhbox \voidb@x \hbox {.}}}{{Mnih, Kavukcuoglu, Silver, Rusu, Veness, Bellemare, Graves, Riedmiller, Fidjeland, Ostrovski, and {others}}}}
+\bibcite{nair_rectified_2010}{{25}{2010}{{Nair and Hinton}}{{Nair and Hinton}}}
+\bibcite{schaffer_combinations_1992}{{26}{1992}{{Schaffer et~al\unhbox \voidb@x \hbox {.}}}{{Schaffer, Whitley, and Eshelman}}}
+\bibcite{simonyan_very_2014}{{27}{2014}{{Simonyan and Zisserman}}{{Simonyan and Zisserman}}}
+\bibcite{snoek_practical_2012}{{28}{2012}{{Snoek et~al\unhbox \voidb@x \hbox {.}}}{{Snoek, Larochelle, and Adams}}}
+\bibcite{snoek_scalable_2015}{{29}{2015}{{Snoek et~al\unhbox \voidb@x \hbox {.}}}{{Snoek, Rippel, Swersky, Kiros, Satish, Sundaram, Patwary, Prabhat, and Adams}}}
+\bibcite{stanley_compositional_2007}{{30}{2007}{{Stanley}}{{Stanley}}}
+\bibcite{stanley_hypercube-based_2009}{{31}{2009}{{Stanley et~al\unhbox \voidb@x \hbox {.}}}{{Stanley, D'Ambrosio, and Gauci}}}
+\bibcite{stanley_evolving_2002}{{32}{2002}{{Stanley and Miikkulainen}}{{Stanley and Miikkulainen}}}
+\bibcite{szegedy_going_2015}{{33}{2015}{{Szegedy et~al\unhbox \voidb@x \hbox {.}}}{{Szegedy, Liu, Jia, Sermanet, Reed, Anguelov, Erhan, Vanhoucke, and Rabinovich}}}
+\bibcite{tokui_chainer:_2015}{{34}{2015}{{Tokui et~al\unhbox \voidb@x \hbox {.}}}{{Tokui, Oono, Hido, and Clayton}}}
+\bibcite{verbancsics_generative_2013}{{35}{2013}{{Verbancsics and Harguess}}{{Verbancsics and Harguess}}}
+\bibcite{verbancsics_image_2015}{{36}{2015}{{Verbancsics and Harguess}}{{Verbancsics and Harguess}}}
+\bibcite{vinyals_show_2015}{{37}{2015}{{Vinyals et~al\unhbox \voidb@x \hbox {.}}}{{Vinyals, Toshev, Bengio, and Erhan}}}
+\bibcite{zhang_colorful_2016}{{38}{2016}{{Zhang et~al\unhbox \voidb@x \hbox {.}}}{{Zhang, Isola, and Efros}}}
+\bibcite{zoph_neural_2016}{{39}{2016}{{Zoph and Le}}{{Zoph and Le}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{0pt}
 \newlabel{tocindent2}{0pt}
 \newlabel{tocindent3}{0pt}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The architecture of CGP-CNN (A) with the small-data scenario.\relax }}{7}{figure.caption.12}}
-\newlabel{model_small}{{5}{7}{The architecture of CGP-CNN (A) with the small-data scenario.\relax }{figure.caption.12}{}}
-\newlabel{TotPages}{{7}{7}{}{page.7}{}}
+\newlabel{TotPages}{{8}{8}{}{page.8}{}}
