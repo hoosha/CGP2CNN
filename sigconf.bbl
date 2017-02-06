@@ -1,0 +1,542 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{00}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{{\tt DOI:}\penalty0{#1}\ }
+  \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       #1{#1}          \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[\protect\citeauthoryear{Baker, Gupta, Naik, and Raskar}{Baker
+  et~al\mbox{.}}{2016}]%
+        {baker_designing_2016}
+\bibfield{author}{\bibinfo{person}{Bowen Baker}, \bibinfo{person}{Otkrist
+  Gupta}, \bibinfo{person}{Nikhil Naik}, {and} \bibinfo{person}{Ramesh
+  Raskar}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Designing neural network architectures using
+  reinforcement learning}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1611.02167\/}}
+  (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bengio}{Bengio}{2000}]%
+        {bengio_gradient-based_2000}
+\bibfield{author}{\bibinfo{person}{Yoshua Bengio}.}
+  \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{Gradient-based optimization of hyperparameters}.
+\newblock \bibinfo{journal}{{\em Neural computation\/}} \bibinfo{volume}{12},
+  \bibinfo{number}{8} (\bibinfo{date}{Aug.} \bibinfo{year}{2000}),
+  \bibinfo{pages}{1889--1900}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bergstra and Bengio}{Bergstra and
+  Bengio}{2012}]%
+        {bergstra_random_2012}
+\bibfield{author}{\bibinfo{person}{James Bergstra} {and}
+  \bibinfo{person}{Yoshua Bengio}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Random search for hyper-parameter optimization}.
+\newblock \bibinfo{journal}{{\em Journal of Machine Learning Research\/}}
+  \bibinfo{volume}{13}, \bibinfo{number}{1} (\bibinfo{date}{Jan.}
+  \bibinfo{year}{2012}), \bibinfo{pages}{281--305}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bergstra, Yamins, and Cox}{Bergstra
+  et~al\mbox{.}}{2013}]%
+        {bergstra_making_2013}
+\bibfield{author}{\bibinfo{person}{James Bergstra}, \bibinfo{person}{Daniel
+  Yamins}, {and} \bibinfo{person}{David~D. Cox}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Making a science of model search: {Hyperparameter}
+  optimization in hundreds of dimensions for vision architectures}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 30th {International} {Conference}
+  on {Machine} {Learning} ({ICML} '13)}}. \bibinfo{address}{Atlanta, Gerorgia},
+  \bibinfo{pages}{115--123}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bergstra, Bardenet, Bengio, and
+  K\'egl}{Bergstra et~al\mbox{.}}{2011}]%
+        {bergstra_algorithms_2011}
+\bibfield{author}{\bibinfo{person}{James~S. Bergstra}, \bibinfo{person}{R\'emi
+  Bardenet}, \bibinfo{person}{Yoshua Bengio}, {and} \bibinfo{person}{Bal\'azs
+  K\'egl}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Algorithms for hyper-parameter optimization}. In
+  \bibinfo{booktitle}{{\em Advances in {Neural} {Information} {Processing}
+  {Systems} 24 ({NIPS} '11)}}. \bibinfo{address}{Granada, Spain},
+  \bibinfo{pages}{2546--2554}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Fernando, Banarse, Reynolds, Besse, Pfau,
+  Jaderberg, Lanctot, and Wierstra}{Fernando et~al\mbox{.}}{2016}]%
+        {fernando_convolution_2016}
+\bibfield{author}{\bibinfo{person}{Chrisantha Fernando}, \bibinfo{person}{Dylan
+  Banarse}, \bibinfo{person}{Malcolm Reynolds}, \bibinfo{person}{Frederic
+  Besse}, \bibinfo{person}{David Pfau}, \bibinfo{person}{Max Jaderberg},
+  \bibinfo{person}{Marc Lanctot}, {and} \bibinfo{person}{Daan Wierstra}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Convolution by evolution: {Differentiable} pattern
+  producing networks}. In \bibinfo{booktitle}{{\em Proceedings of the {Genetic}
+  and {Evolutionary} {Computation} {Conference} 2016 ({GECCO} '16)}}.
+  \bibinfo{address}{Denver, Colorado}, \bibinfo{pages}{109--116}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Goodfellow, Warde-Farley, Mirza, Courville,
+  and Bengio}{Goodfellow et~al\mbox{.}}{2013}]%
+        {goodfellow_maxout_2013}
+\bibfield{author}{\bibinfo{person}{Ian~J. Goodfellow}, \bibinfo{person}{David
+  Warde-Farley}, \bibinfo{person}{Mehdi Mirza}, \bibinfo{person}{Aaron~C.
+  Courville}, {and} \bibinfo{person}{Yoshua Bengio}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Maxout networks}. In \bibinfo{booktitle}{{\em
+  Proceedings of the 30th {International} {Conference} on {Machine} {Learning}
+  ({ICML} '13)}}. \bibinfo{address}{Atlanta, Gerorgia},
+  \bibinfo{pages}{1319--1327}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Harding}{Harding}{2008}]%
+        {harding_evolution_2008}
+\bibfield{author}{\bibinfo{person}{Simon Harding}.}
+  \bibinfo{year}{2008}\natexlab{}.
+\newblock \showarticletitle{Evolution of image filters on graphics processor
+  units using cartesian genetic programming}. In \bibinfo{booktitle}{{\em
+  Proceedings of the {IEEE} {Congress} on {Evolutionary} {Computation} ({CEC}
+  '08)}}. \bibinfo{address}{Hong Kong, China}, \bibinfo{pages}{1921--1928}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{He, Zhang, Ren, and Sun}{He
+  et~al\mbox{.}}{2015}]%
+        {he_delving_2015}
+\bibfield{author}{\bibinfo{person}{Kaiming He}, \bibinfo{person}{Xiangyu
+  Zhang}, \bibinfo{person}{Shaoqing Ren}, {and} \bibinfo{person}{Jian Sun}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Delving deep into rectifiers: {Surpassing}
+  human-level performance on imagenet classification}. In
+  \bibinfo{booktitle}{{\em Proceedings of the {IEEE} {International}
+  {Conference} on {Computer} {Vision} ({ICCV} '15)}}.
+  \bibinfo{address}{Santiago, Chile}, \bibinfo{pages}{1026--1034}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{He, Zhang, Ren, and Sun}{He
+  et~al\mbox{.}}{2016}]%
+        {he_deep_2016}
+\bibfield{author}{\bibinfo{person}{Kaiming He}, \bibinfo{person}{Xiangyu
+  Zhang}, \bibinfo{person}{Shaoqing Ren}, {and} \bibinfo{person}{Jian Sun}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Deep residual learning for image recognition}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 29th {IEEE} {Conference} on
+  {Computer} {Vision} and {Pattern} {Recognition} ({CVPR} '16)}}.
+  \bibinfo{address}{Las Vegas, Nevada}, \bibinfo{pages}{770--778}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hinton, Deng, Yu, Dahl, Mohamed, Jaitly,
+  Senior, Vanhoucke, Nguyen, Sainath, and {others}}{Hinton
+  et~al\mbox{.}}{2012}]%
+        {hinton_deep_2012}
+\bibfield{author}{\bibinfo{person}{Geoffrey Hinton}, \bibinfo{person}{Li Deng},
+  \bibinfo{person}{Dong Yu}, \bibinfo{person}{George~E. Dahl},
+  \bibinfo{person}{Abdel-rahman Mohamed}, \bibinfo{person}{Navdeep Jaitly},
+  \bibinfo{person}{Andrew Senior}, \bibinfo{person}{Vincent Vanhoucke},
+  \bibinfo{person}{Patrick Nguyen}, \bibinfo{person}{Tara~N. Sainath}, {and}
+  \bibinfo{person}{{others}}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Deep neural networks for acoustic modeling in
+  speech recognition: {The} shared views of four research groups}.
+\newblock \bibinfo{journal}{{\em IEEE Signal Processing Magazine\/}}
+  \bibinfo{volume}{29}, \bibinfo{number}{6} (\bibinfo{date}{Nov.}
+  \bibinfo{year}{2012}), \bibinfo{pages}{82--97}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Huang, Liu, Weinberger, and van~der
+  Maaten}{Huang et~al\mbox{.}}{2016}]%
+        {huang_densely_2016}
+\bibfield{author}{\bibinfo{person}{Gao Huang}, \bibinfo{person}{Zhuang Liu},
+  \bibinfo{person}{Kilian~Q. Weinberger}, {and} \bibinfo{person}{Laurens
+  van~der Maaten}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Densely connected convolutional networks}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1608.06993\/}}
+  (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Hutter, Hoos, and Leyton-Brown}{Hutter
+  et~al\mbox{.}}{2011}]%
+        {hutter_sequential_2011}
+\bibfield{author}{\bibinfo{person}{Frank Hutter}, \bibinfo{person}{Holger~H.
+  Hoos}, {and} \bibinfo{person}{Kevin Leyton-Brown}.}
+  \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Sequential model-based optimization for general
+  algorithm configuration}. In \bibinfo{booktitle}{{\em Proceedings of the 5th
+  {International} {Conference} on {Learning} and {Intelligent}
+  {Optimization}}}. \bibinfo{address}{Rome, Italy}, \bibinfo{pages}{507--523}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Ioffe and Szegedy}{Ioffe and Szegedy}{2015}]%
+        {ioffe_batch_2015}
+\bibfield{author}{\bibinfo{person}{Sergey Ioffe} {and}
+  \bibinfo{person}{Christian Szegedy}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Batch normalization: {Accelerating} deep network
+  training by reducing internal covariate shift}. In \bibinfo{booktitle}{{\em
+  Proceedings of the 32nd {International} {Conference} on {Machine} {Learning}
+  ({ICML} '15)}}. \bibinfo{address}{Lille, France}, \bibinfo{pages}{448--456}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Kingma and Ba}{Kingma and Ba}{2015}]%
+        {kingma_adam:_2015}
+\bibfield{author}{\bibinfo{person}{Diederik Kingma} {and}
+  \bibinfo{person}{Jimmy Ba}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Adam: {A} method for stochastic optimization}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 3rd {International} {Conference}
+  on {Learning} {Representaions} ({ICLR} '15)}}. \bibinfo{address}{San Diego},
+  \bibinfo{pages}{2452--2459}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Krizhevsky}{Krizhevsky}{2009}]%
+        {krizhevsky_learning_2009}
+\bibfield{author}{\bibinfo{person}{Alex Krizhevsky}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Learning multiple layers of features from tiny
+  images}.
+\newblock \bibinfo{journal}{{\em Technical report\/}} (\bibinfo{year}{2009}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Krizhevsky, Sutskever, and Hinton}{Krizhevsky
+  et~al\mbox{.}}{2012}]%
+        {krizhevsky_imagenet_2012}
+\bibfield{author}{\bibinfo{person}{Alex Krizhevsky}, \bibinfo{person}{Ilya
+  Sutskever}, {and} \bibinfo{person}{Geoffrey~E. Hinton}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Imagenet classification with deep convolutional
+  neural networks}. In \bibinfo{booktitle}{{\em Advances in {Neural}
+  {Information} {Processing} {Systems} 25 ({NIPS} '12)}}.
+  \bibinfo{address}{Nevada}, \bibinfo{pages}{1097--1105}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{LeCun, Bottou, Bengio, and Haffner}{LeCun
+  et~al\mbox{.}}{1998}]%
+        {lecun_gradient-based_1998}
+\bibfield{author}{\bibinfo{person}{Yann LeCun}, \bibinfo{person}{Leon Bottou},
+  \bibinfo{person}{Yoshua Bengio}, {and} \bibinfo{person}{Patrick Haffner}.}
+  \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Gradient-based learning applied to document
+  recognition}.
+\newblock \bibinfo{journal}{{\it Proc. IEEE}} \bibinfo{volume}{86},
+  \bibinfo{number}{11} (\bibinfo{date}{Nov.} \bibinfo{year}{1998}),
+  \bibinfo{pages}{2278--2324}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lin, Chen, and Yan}{Lin et~al\mbox{.}}{2014}]%
+        {lin_network_2014}
+\bibfield{author}{\bibinfo{person}{Min Lin}, \bibinfo{person}{Qiang Chen},
+  {and} \bibinfo{person}{Shuicheng Yan}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Network in network}. In \bibinfo{booktitle}{{\em
+  Proceedings of the 2nd {International} {Conference} on {Learning}
+  {Representaions} ({ICLR} '14)}}. \bibinfo{address}{Banff, Canada}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Loshchilov and Hutter}{Loshchilov and
+  Hutter}{2016}]%
+        {loshchilov_cma-es_2016}
+\bibfield{author}{\bibinfo{person}{Ilya Loshchilov} {and}
+  \bibinfo{person}{Frank Hutter}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{{CMA}-{ES} for hyperparameter optimization of deep
+  neural networks}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1604.07269\/}}
+  (\bibinfo{year}{2016}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Miller and Smith}{Miller and Smith}{2006}]%
+        {miller_redundancy_2006}
+\bibfield{author}{\bibinfo{person}{Julian~F. Miller} {and}
+  \bibinfo{person}{Stephen~L. Smith}.} \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{Redundancy and computational efficiency in
+  cartesian genetic programming}.
+\newblock \bibinfo{journal}{{\em IEEE Transactions on Evolutionary
+  Computation\/}} \bibinfo{volume}{10}, \bibinfo{number}{2}
+  (\bibinfo{date}{April} \bibinfo{year}{2006}), \bibinfo{pages}{167--174}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Miller and Thomson}{Miller and
+  Thomson}{2000}]%
+        {miller_cartesian_2000}
+\bibfield{author}{\bibinfo{person}{Julian~F. Miller} {and}
+  \bibinfo{person}{Peter Thomson}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{Cartesian genetic programming}. In
+  \bibinfo{booktitle}{{\em Proceedings of the {European} {Conference} on
+  {Genetic} {Programming} ({EuroGP} '00)}}. \bibinfo{address}{Scotland, UK},
+  \bibinfo{pages}{121--132}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mnih, Kavukcuoglu, Silver, Graves, Antonoglou,
+  Wierstra, and Riedmiller}{Mnih et~al\mbox{.}}{2013}]%
+        {mnih_playing_2013}
+\bibfield{author}{\bibinfo{person}{Volodymyr Mnih}, \bibinfo{person}{Koray
+  Kavukcuoglu}, \bibinfo{person}{David Silver}, \bibinfo{person}{Alex Graves},
+  \bibinfo{person}{Ioannis Antonoglou}, \bibinfo{person}{Daan Wierstra}, {and}
+  \bibinfo{person}{Martin Riedmiller}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Playing atari with deep reinforcement learning}. In
+  \bibinfo{booktitle}{{\em Proceedings of {Neural} {Information} {Processing}
+  {Systems} ({NIPS} '13) {Workshop} on {Deep} {Learning}}}.
+  \bibinfo{address}{Nevada}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Mnih, Kavukcuoglu, Silver, Rusu, Veness,
+  Bellemare, Graves, Riedmiller, Fidjeland, Ostrovski, and {others}}{Mnih
+  et~al\mbox{.}}{2015}]%
+        {mnih_human-level_2015}
+\bibfield{author}{\bibinfo{person}{Volodymyr Mnih}, \bibinfo{person}{Koray
+  Kavukcuoglu}, \bibinfo{person}{David Silver}, \bibinfo{person}{Andrei~A.
+  Rusu}, \bibinfo{person}{Joel Veness}, \bibinfo{person}{Marc~G. Bellemare},
+  \bibinfo{person}{Alex Graves}, \bibinfo{person}{Martin Riedmiller},
+  \bibinfo{person}{Andreas~K. Fidjeland}, \bibinfo{person}{Georg Ostrovski},
+  {and} \bibinfo{person}{{others}}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Human-level control through deep reinforcement
+  learning}.
+\newblock \bibinfo{journal}{{\em Nature\/}} \bibinfo{volume}{518},
+  \bibinfo{number}{7540} (\bibinfo{date}{Feb.} \bibinfo{year}{2015}),
+  \bibinfo{pages}{529--533}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Nair and Hinton}{Nair and Hinton}{2010}]%
+        {nair_rectified_2010}
+\bibfield{author}{\bibinfo{person}{Vinod Nair} {and}
+  \bibinfo{person}{Geoffrey~E. Hinton}.} \bibinfo{year}{2010}\natexlab{}.
+\newblock \showarticletitle{Rectified linear units improve restricted boltzmann
+  machines}. In \bibinfo{booktitle}{{\em Proceedings of the 27th
+  {International} {Conference} on {Machine} {Learning} ({ICML} '10)}}.
+  \bibinfo{address}{Haifa, Israel}, \bibinfo{pages}{807--814}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Schaffer, Whitley, and Eshelman}{Schaffer
+  et~al\mbox{.}}{1992}]%
+        {schaffer_combinations_1992}
+\bibfield{author}{\bibinfo{person}{J.~David Schaffer}, \bibinfo{person}{Darrell
+  Whitley}, {and} \bibinfo{person}{Larry~J. Eshelman}.}
+  \bibinfo{year}{1992}\natexlab{}.
+\newblock \showarticletitle{Combinations of genetic algorithms and neural
+  networks: {A} survey of the state of the art}. In \bibinfo{booktitle}{{\em
+  Proceedings of {International} {Workshop} on {Combinations} of {Genetic}
+  {Algorithms} and {Neural} {Networks} ({COGANN} '92)}}.
+  \bibinfo{address}{Baltimore, Maryland}, \bibinfo{pages}{1--37}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Simonyan and Zisserman}{Simonyan and
+  Zisserman}{2014}]%
+        {simonyan_very_2014}
+\bibfield{author}{\bibinfo{person}{Karen Simonyan} {and}
+  \bibinfo{person}{Andrew Zisserman}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{Very deep convolutional networks for large-scale
+  image recognition}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1409.1556\/}}
+  (\bibinfo{year}{2014}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Snoek, Larochelle, and Adams}{Snoek
+  et~al\mbox{.}}{2012}]%
+        {snoek_practical_2012}
+\bibfield{author}{\bibinfo{person}{Jasper Snoek}, \bibinfo{person}{Hugo
+  Larochelle}, {and} \bibinfo{person}{Ryan~P. Adams}.}
+  \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Practical bayesian optimization of machine learning
+  algorithms}. In \bibinfo{booktitle}{{\em Advances in {Neural} {Information}
+  {Processing} {Systems} ({NIPS} '12)}}. \bibinfo{address}{Nevada},
+  \bibinfo{pages}{2951--2959}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Snoek, Rippel, Swersky, Kiros, Satish,
+  Sundaram, Patwary, Prabhat, and Adams}{Snoek et~al\mbox{.}}{2015}]%
+        {snoek_scalable_2015}
+\bibfield{author}{\bibinfo{person}{Jasper Snoek}, \bibinfo{person}{Oren
+  Rippel}, \bibinfo{person}{Kevin Swersky}, \bibinfo{person}{Ryan Kiros},
+  \bibinfo{person}{Nadathur Satish}, \bibinfo{person}{Narayanan Sundaram},
+  \bibinfo{person}{Md~Mostofa~Ali Patwary}, \bibinfo{person}{Mr Prabhat}, {and}
+  \bibinfo{person}{Ryan~P. Adams}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Scalable bayesian optimization using deep neural
+  networks}. In \bibinfo{booktitle}{{\em Proceedings of the 32nd
+  {International} {Conference} on {Machine} {Learning} ({ICML} '15)}}.
+  \bibinfo{address}{Lille, France}, \bibinfo{pages}{2171--2180}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Stanley}{Stanley}{2007}]%
+        {stanley_compositional_2007}
+\bibfield{author}{\bibinfo{person}{Kenneth~O. Stanley}.}
+  \bibinfo{year}{2007}\natexlab{}.
+\newblock \showarticletitle{Compositional pattern producing networks: {A} novel
+  abstraction of development}.
+\newblock \bibinfo{journal}{{\em Genetic Programming and Evolvable Machines\/}}
+  \bibinfo{volume}{8}, \bibinfo{number}{2} (\bibinfo{date}{June}
+  \bibinfo{year}{2007}), \bibinfo{pages}{131--162}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Stanley, D'Ambrosio, and Gauci}{Stanley
+  et~al\mbox{.}}{2009}]%
+        {stanley_hypercube-based_2009}
+\bibfield{author}{\bibinfo{person}{Kenneth~O. Stanley},
+  \bibinfo{person}{David~B. D'Ambrosio}, {and} \bibinfo{person}{Jason Gauci}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{A hypercube-based encoding for evolving large-scale
+  neural networks}.
+\newblock \bibinfo{journal}{{\em Artificial life\/}} \bibinfo{volume}{15},
+  \bibinfo{number}{2} (\bibinfo{year}{2009}), \bibinfo{pages}{185--212}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Stanley and Miikkulainen}{Stanley and
+  Miikkulainen}{2002}]%
+        {stanley_evolving_2002}
+\bibfield{author}{\bibinfo{person}{Kenneth~O. Stanley} {and}
+  \bibinfo{person}{Risto Miikkulainen}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{Evolving neural networks through augmenting
+  topologies}.
+\newblock \bibinfo{journal}{{\em Evolutionary computation\/}}
+  \bibinfo{volume}{10}, \bibinfo{number}{2} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{99--127}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Szegedy, Liu, Jia, Sermanet, Reed, Anguelov,
+  Erhan, Vanhoucke, and Rabinovich}{Szegedy et~al\mbox{.}}{2015}]%
+        {szegedy_going_2015}
+\bibfield{author}{\bibinfo{person}{Christian Szegedy}, \bibinfo{person}{Wei
+  Liu}, \bibinfo{person}{Yangqing Jia}, \bibinfo{person}{Pierre Sermanet},
+  \bibinfo{person}{Scott Reed}, \bibinfo{person}{Dragomir Anguelov},
+  \bibinfo{person}{Dumitru Erhan}, \bibinfo{person}{Vincent Vanhoucke}, {and}
+  \bibinfo{person}{Andrew Rabinovich}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Going deeper with convolutions}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 28th {IEEE} {Conference} on
+  {Computer} {Vision} and {Pattern} {Recognition} ({CVPR} '15)}}.
+  \bibinfo{address}{Boston, Massachusetts}, \bibinfo{pages}{1--9}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Tokui, Oono, Hido, and Clayton}{Tokui
+  et~al\mbox{.}}{2015}]%
+        {tokui_chainer:_2015}
+\bibfield{author}{\bibinfo{person}{Seiya Tokui}, \bibinfo{person}{Kenta Oono},
+  \bibinfo{person}{Shohei Hido}, {and} \bibinfo{person}{Justin Clayton}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Chainer: a next-generation open source framework
+  for deep learning}. In \bibinfo{booktitle}{{\em Proceedings of {Neural}
+  {Information} {Processing} {Systems} ({NIPS} '15) {Workshop} on {Machine}
+  {Learning} {Systems} ({LearningSys})}}. \bibinfo{address}{Montreal, Canada}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Verbancsics and Harguess}{Verbancsics and
+  Harguess}{2013}]%
+        {verbancsics_generative_2013}
+\bibfield{author}{\bibinfo{person}{Phillip Verbancsics} {and}
+  \bibinfo{person}{Josh Harguess}.} \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{Generative neuroevolution for deep learning}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1312.5355\/}}
+  (\bibinfo{year}{2013}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Verbancsics and Harguess}{Verbancsics and
+  Harguess}{2015}]%
+        {verbancsics_image_2015}
+\bibfield{author}{\bibinfo{person}{Phillip Verbancsics} {and}
+  \bibinfo{person}{Josh Harguess}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Image classification using generative neuro
+  evolution for deep learning}. In \bibinfo{booktitle}{{\em Proceedings of the
+  {IEEE} {Winter} {Conference} on {Applications} of {Computer} {Vision} ({WACV}
+  '15)}}. \bibinfo{address}{Hawaii}, \bibinfo{pages}{488--493}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Vinyals, Toshev, Bengio, and Erhan}{Vinyals
+  et~al\mbox{.}}{2015}]%
+        {vinyals_show_2015}
+\bibfield{author}{\bibinfo{person}{Oriol Vinyals}, \bibinfo{person}{Alexander
+  Toshev}, \bibinfo{person}{Samy Bengio}, {and} \bibinfo{person}{Dumitru
+  Erhan}.} \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Show and tell: {A} neural image caption generator}.
+  In \bibinfo{booktitle}{{\em Proceedings of the 28th {IEEE} {Conference} on
+  {Computer} {Vision} and {Pattern} {Recognition} ({CVPR} '15)}}.
+  \bibinfo{address}{Boston, Massachusetts}, \bibinfo{pages}{3156--3164}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zhang, Isola, and Efros}{Zhang
+  et~al\mbox{.}}{2016}]%
+        {zhang_colorful_2016}
+\bibfield{author}{\bibinfo{person}{Richard Zhang}, \bibinfo{person}{Phillip
+  Isola}, {and} \bibinfo{person}{Alexei~A. Efros}.}
+  \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Colorful image colorization}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 14th {European} {Conference} on
+  {Computer} {Vision} ({ECCV} '16)}}. \bibinfo{address}{Amsterdam, The
+  Netherlands}, \bibinfo{pages}{649--666}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Zoph and Le}{Zoph and Le}{2016}]%
+        {zoph_neural_2016}
+\bibfield{author}{\bibinfo{person}{Barret Zoph} {and} \bibinfo{person}{Quoc~V.
+  Le}.} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{Neural architecture search with reinforcement
+  learning}.
+\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1611.01578\/}}
+  (\bibinfo{year}{2016}).
+\newblock
+
+
+\end{thebibliography}
