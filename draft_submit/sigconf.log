@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.2.6)  6 FEB 2017 13:18
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2016.2.6)  7 FEB 2017 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -821,26 +821,26 @@ Package caption Info: End \AtBeginDocument code.
 
 Excluding 'CCSXML' comment.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 190.
+(Font)              scaled to size 17.28pt on input line 191.
  (I search kanjifont definition file: . . )
 (I search font definition file: . . . . . . . . . . )
 LaTeX Font Info:    Try loading font information for JT1+LinuxBiolinumT-TLF on 
-input line 190.
-LaTeX Font Info:    No file JT1LinuxBiolinumT-TLF.fd. on input line 190.
+input line 191.
+LaTeX Font Info:    No file JT1LinuxBiolinumT-TLF.fd. on input line 191.
 
 
 LaTeX Font Warning: Font shape `JT1/LinuxBiolinumT-TLF/m/n' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 190.
+(Font)              using `JT1/mc/m/n' instead on input line 191.
 
 LaTeX Font Info:    Try loading font information for JY1+LinuxBiolinumT-TLF on 
-input line 190.
-LaTeX Font Info:    No file JY1LinuxBiolinumT-TLF.fd. on input line 190.
+input line 191.
+LaTeX Font Info:    No file JY1LinuxBiolinumT-TLF.fd. on input line 191.
 
 LaTeX Font Warning: Font shape `JY1/LinuxBiolinumT-TLF/m/n' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 190.
+(Font)              using `JY1/mc/m/n' instead on input line 191.
 
 LaTeX Font Info:    Try loading font information for OT1+LinuxBiolinumT-TLF on 
-input line 190.
+input line 191.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/libertine/OT1LinuxBiolinumT-TLF.f
 d
@@ -848,40 +848,40 @@ File: OT1LinuxBiolinumT-TLF.fd 2012/11/26 (autoinst) Font definitions for OT1/L
 inuxBiolinumT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 190.
+(Font)              scaled to size 17.28pt on input line 191.
 
 
 LaTeX Font Warning: Font shape `JT1/LinuxBiolinumT-TLF/bx/n' undefined
 (Font)              using `JT1/LinuxBiolinumT-TLF/m/n' instead on input line 19
-0.
+1.
 
 
 LaTeX Font Warning: Font shape `JY1/LinuxBiolinumT-TLF/bx/n' undefined
 (Font)              using `JY1/LinuxBiolinumT-TLF/m/n' instead on input line 19
-0.
+1.
 
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/bx/n' in size <17.28> no
 t available
 (Font)              Font shape `OT1/LinuxBiolinumT-TLF/b/n' tried instead on in
-put line 190.
+put line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 190.
+(Font)              scaled to size 17.28pt on input line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 190.
+(Font)              scaled to size 12.0pt on input line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 190.
+(Font)              scaled to size 10.0pt on input line 191.
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 190.
+(Font)              using `JT1/mc/m/n' instead on input line 191.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 190.
+(Font)              using `JY1/mc/m/n' instead on input line 191.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 190.
+(Font)              scaled to size 7.0pt on input line 191.
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 190.
+ input line 191.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.
 fd
@@ -889,57 +889,63 @@ File: TS1LinuxLibertineT-TLF.fd 2012/11/26 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 190.
+(Font)              scaled to size 7.0pt on input line 191.
 
 
 LaTeX Font Warning: Font shape `JT1/mc/b/n' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 190.
+(Font)              using `JT1/mc/m/n' instead on input line 191.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/b/n' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 190.
+(Font)              using `JY1/mc/m/n' instead on input line 191.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 190.
+(Font)              scaled to size 9.0pt on input line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 190.
+(Font)              scaled to size 10.95pt on input line 191.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 190.
+(Font)              scaled to size 9.0pt on input line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 190.
+(Font)              scaled to size 9.0pt on input line 191.
 
-Overfull \hbox (6.5458pt too wide) in paragraph at lines 190--190
+Overfull \hbox (6.5458pt too wide) in paragraph at lines 191--191
 \OT1/LinuxLibertineT-TLF/m/n/9 genetic pro-gram-ming, con-vo-lu-tional neu-ral 
 net-work, de-sign-ing neu-
  []
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 190.
+(Font)              scaled to size 8.0pt on input line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 190.
+(Font)              scaled to size 8.0pt on input line 191.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 8.0pt on input line 190.
+(Font)              scaled to size 8.0pt on input line 191.
+
+Overfull \hbox (3.2119pt too wide) in paragraph at lines 191--191
+\OT1/LinuxLibertineT-TLF/m/it/8 ceed-ings of the Ge-netic and Evo-lu-tion-ary C
+om-pu-ta-tion Con-fer-ence 2017, Berlin,
+ []
+
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 190.
+(Font)              scaled to size 6.2pt on input line 191.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unskip' on input line 190.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unskip' on input line 190.
+(hyperref)                removing `\unskip' on input line 191.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 190.
+(hyperref)                removing `\unskip' on input line 191.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\to' on input line 190.
+(hyperref)                removing `math shift' on input line 191.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 190.
+(hyperref)                removing `\to' on input line 191.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 191.
 
 (./body-conf.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -953,72 +959,69 @@ a-ram-e-ter tun-ing meth-
  []
 
 
-Overfull \hbox (12.91699pt too wide) in paragraph at lines 48--49
-\OT1/LinuxLibertineT-TLF/m/n/9 com-po-si-tional pattern-producing net-works (CP
-PNs) [[]]. This method
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-File: images/overview.eps Graphic file (type eps)
+File: images/overview.pdf Graphic file (type eps)
 
-<images/overview.eps>
-File: images/genotype.eps Graphic file (type eps)
- <images/genotype.eps>
+<images/overview.pdf>
+File: images/genotype.pdf Graphic file (type eps)
+ <images/genotype.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `OT1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 86.
+(Font)              scaled to size 9.0pt on input line 87.
  [2.2]
-Overfull \hbox (1.64522pt too wide) in paragraph at lines 92--95
-[]\OT1/LinuxLibertineT-TLF/m/n/9 The Con-vBlock con-sists of []stan-dard[] con-
-vo-lu-tion pro-cess-ing with
+Overfull \hbox (1.64522pt too wide) in paragraph at lines 93--96
+[]\OT1/LinuxLibertineT-TLF/m/n/9 The Con-vBlock con-sists of stan-dard con-vo-l
+u-tion pro-cess-ing with
  []
 
-File: images/resblock.eps Graphic file (type eps)
-<images/resblock.eps>
+File: images/resblock.pdf Graphic file (type eps)
+<images/resblock.pdf>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3.3]
-Overfull \hbox (5.67445pt too wide) in paragraph at lines 167--168
+Overfull \hbox (5.67445pt too wide) in paragraph at lines 170--171
 \OT1/LinuxLibertineT-TLF/m/n/9 We test our method on the im-age clas-si-fi-ca-t
 ion task us-ing the CIFAR-
  []
 
-
-Underfull \vbox (badness 7133) has occurred while \output is active []
-
- [4.4]
-Overfull \hbox (2.18819pt too wide) in paragraph at lines 207--211
-\OT1/LinuxLibertineT-TLF/m/n/9 us-ing each train-ing []im-age[] ($50\OML/nxlmi/
-m/it/9 ; \OT1/LinuxLibertineT-TLF/m/n/9 000$ for the de-fault sce-nario and $5\
-OML/nxlmi/m/it/9 ; \OT1/LinuxLibertineT-TLF/m/n/9 000$
+[4.4]
+Overfull \hbox (2.18819pt too wide) in paragraph at lines 210--211
+\OT1/LinuxLibertineT-TLF/m/n/9 us-ing each train-ing im-age ($50\OML/nxlmi/m/it
+/9 ; \OT1/LinuxLibertineT-TLF/m/n/9 000$ for the de-fault sce-nario and $5\OML/
+nxlmi/m/it/9 ; \OT1/LinuxLibertineT-TLF/m/n/9 000$
  []
 
-File: images/modelA.eps Graphic file (type eps)
-<images/modelA.eps>
-Overfull \hbox (13.06512pt too wide) in paragraph at lines 219--220
+File: images/modelA.pdf Graphic file (type eps)
+<images/modelA.pdf>
+Overfull \hbox (13.06512pt too wide) in paragraph at lines 223--224
  [][] 
  []
 
-File: images/modelB.eps Graphic file (type eps)
-<images/modelB.eps>
-Overfull \hbox (1.15065pt too wide) in paragraph at lines 249--261
+File: images/modelB.pdf Graphic file (type eps)
+<images/modelB.pdf>
+Overfull \hbox (1.15065pt too wide) in paragraph at lines 253--265
  [][] 
+ []
+
+
+Overfull \hbox (2.22682pt too wide) in paragraph at lines 273--274
+[]\OT1/LinuxLibertineT-TLF/m/n/9 Figure [][][][] shows the ar-chi-tec-tures con
+-structed by CGP-CNN (Con-
  []
 
 [5.5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \vbox (badness 3471) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6.6]
-File: images/model_small.eps Graphic file (type eps)
+File: images/model_small.pdf Graphic file (type eps)
 
-<images/model_small.eps>
-Underfull \hbox (badness 1248) in paragraph at lines 307--307
+<images/model_small.pdf>
+Underfull \hbox (badness 1248) in paragraph at lines 323--323
 []\OT1/LinuxLibertineT-TLF/b/n/9 Figure 5: |The ar-chi-tec-ture of CGP-CNN (Con
 -vSet) con-
  []
@@ -1033,36 +1036,32 @@ LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
 (Font)              using `JY1/gt/m/n' instead on input line 49.
 
 
-Underfull \hbox (badness 3482) in paragraph at lines 192--197
+Underfull \hbox (badness 3482) in paragraph at lines 194--199
 []\OT1/LinuxLibertineT-TLF/m/n/7 Gao Huang, Zhuang Liu, Kil-ian Q. Wein-berger,
  and Lau-rens van der
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7.7])
-[8.8
+[7.7]) [8.8
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (./sigconf.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 197.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 197.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 198.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 198.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 12511 strings out of 493777
- 189306 string characters out of 6151335
- 315933 words of memory out of 5000000
- 15614 multiletter control sequences out of 15000+600000
+ 12513 strings out of 493777
+ 189327 string characters out of 6151335
+ 314887 words of memory out of 5000000
+ 15616 multiletter control sequences out of 15000+600000
  53475 words of font info for 118 fonts, out of 8000000 for 9000
  1090 hyphenation exceptions out of 8191
  60i,14n,94p,1219b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sigconf.dvi (8 pages, 108136 bytes).
+Output written on sigconf.dvi (8 pages, 97940 bytes).

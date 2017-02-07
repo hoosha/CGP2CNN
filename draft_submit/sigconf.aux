@@ -58,9 +58,9 @@
 \citation{szegedy_going_2015}
 \citation{he_deep_2016}
 \citation{miller_redundancy_2006,miller_cartesian_2000}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of our method. Our method represents \new {CNN} architectures based on Cartegian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.\relax }}{3}{figure.caption.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Overview of our method. Our method represents \new {CNN} architectures based on Cartesian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.\relax }}{3}{figure.caption.5}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{overview}{{1}{3}{Overview of our method. Our method represents \new {CNN} architectures based on Cartegian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.\relax }{figure.caption.5}{}}
+\newlabel{overview}{{1}{3}{Overview of our method. Our method represents \new {CNN} architectures based on Cartesian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.\relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Representation of CNN Architectures}{3}{subsection.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Evolutionary Algorithm}{3}{subsection.3.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example of a genotype and a phenotype. The genotype (left) defines the CNN architecture (right). In this case, node No. 5 on the left side is \new {an inactive node.} The summation node performs \new {max pooling} to \new {the} first input so as to get the same input tensor sizes.\relax }}{4}{figure.caption.6}}
@@ -73,6 +73,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Dataset}{4}{subsection.4.1}}
 \citation{he_delving_2015}
 \citation{kingma_adam:_2015}
+\citation{he_deep_2016}
 \citation{he_deep_2016}
 \citation{tokui_chainer:_2015}
 \citation{goodfellow_maxout_2013}
@@ -92,6 +93,8 @@
 \newlabel{results}{{3}{5}{Comparison of error rates on the CIFAR-10 dataset (default scenario). The values of Maxout, Network in Network, ResNet, MetaQNN, and Neural Architecture Search are referred from the reference papers.\relax }{table.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Result of the Default Scenario}{5}{subsection.4.3}}
 \citation{he_deep_2016}
+\citation{simonyan_very_2014}
+\citation{he_deep_2016}
 \newlabel{modelA}{{4a}{6}{CGP-CNN (ConvSet)\relax }{figure.caption.10}{}}
 \newlabel{sub@modelA}{{a}{6}{CGP-CNN (ConvSet)\relax }{figure.caption.10}{}}
 \newlabel{modelB}{{4b}{6}{CGP-CNN (ResSet)\relax }{figure.caption.10}{}}
@@ -99,8 +102,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The CNN architectures designed by our method on the default scenario.\relax }}{6}{figure.caption.10}}
 \newlabel{models}{{4}{6}{The CNN architectures designed by our method on the default scenario.\relax }{figure.caption.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Result of the Small-data Scenario}{6}{subsection.4.4}}
-\citation{simonyan_very_2014}
-\citation{he_deep_2016}
 \bibstyle{ACM-Reference-Format}
 \bibdata{sigconf}
 \bibcite{baker_designing_2016}{{1}{2016}{{Baker et~al\unhbox \voidb@x \hbox {.}}}{{Baker, Gupta, Naik, and Raskar}}}
@@ -120,16 +121,16 @@
 \bibcite{kingma_adam:_2015}{{15}{2015}{{Kingma and Ba}}{{Kingma and Ba}}}
 \bibcite{krizhevsky_learning_2009}{{16}{2009}{{Krizhevsky}}{{Krizhevsky}}}
 \bibcite{krizhevsky_imagenet_2012}{{17}{2012}{{Krizhevsky et~al\unhbox \voidb@x \hbox {.}}}{{Krizhevsky, Sutskever, and Hinton}}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison of error rates on the CIFAR-10 dataset (small-data scenario).\relax }}{7}{table.caption.12}}
-\newlabel{results_small}{{4}{7}{Comparison of error rates on the CIFAR-10 dataset (small-data scenario).\relax }{table.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The architecture of CGP-CNN (ConvSet) constructed \new {in} the small-data scenario.\relax }}{7}{figure.caption.13}}
-\newlabel{model_small}{{5}{7}{The architecture of CGP-CNN (ConvSet) constructed \new {in} the small-data scenario.\relax }{figure.caption.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}}
-\@writefile{toc}{\contentsline {section}{References}{7}{section*.15}}
 \bibcite{lecun_gradient-based_1998}{{18}{1998}{{LeCun et~al\unhbox \voidb@x \hbox {.}}}{{LeCun, Bottou, Bengio, and Haffner}}}
 \bibcite{lin_network_2014}{{19}{2014}{{Lin et~al\unhbox \voidb@x \hbox {.}}}{{Lin, Chen, and Yan}}}
 \bibcite{loshchilov_cma-es_2016}{{20}{2016}{{Loshchilov and Hutter}}{{Loshchilov and Hutter}}}
 \bibcite{miller_redundancy_2006}{{21}{2006}{{Miller and Smith}}{{Miller and Smith}}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison of error rates on the CIFAR-10 dataset (small-data scenario).\relax }}{7}{table.caption.12}}
+\newlabel{results_small}{{4}{7}{Comparison of error rates on the CIFAR-10 dataset (small-data scenario).\relax }{table.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}{section.5}}
+\@writefile{toc}{\contentsline {section}{References}{7}{section*.15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The architecture of CGP-CNN (ConvSet) constructed \new {in} the small-data scenario.\relax }}{7}{figure.caption.13}}
+\newlabel{model_small}{{5}{7}{The architecture of CGP-CNN (ConvSet) constructed \new {in} the small-data scenario.\relax }{figure.caption.13}{}}
 \bibcite{miller_cartesian_2000}{{22}{2000}{{Miller and Thomson}}{{Miller and Thomson}}}
 \bibcite{mnih_playing_2013}{{23}{2013}{{Mnih et~al\unhbox \voidb@x \hbox {.}}}{{Mnih, Kavukcuoglu, Silver, Graves, Antonoglou, Wierstra, and Riedmiller}}}
 \bibcite{mnih_human-level_2015}{{24}{2015}{{Mnih et~al\unhbox \voidb@x \hbox {.}}}{{Mnih, Kavukcuoglu, Silver, Rusu, Veness, Bellemare, Graves, Riedmiller, Fidjeland, Ostrovski, and {others}}}}

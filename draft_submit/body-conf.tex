@@ -1,7 +1,7 @@
 % ----------------------------------------------------------------------------------------------------
 \section{Introduction}
 
-Deep learning, which uses deep neural networks as a model, has shown a good performance on many challenging artificial intelligence and machine learning tasks\new{,} such as image recognition \cite{lecun_gradient-based_1998,krizhevsky_imagenet_2012}, speech recognition \cite{hinton_deep_2012}, and reinforcement learning tasks \cite{mnih_playing_2013,mnih_human-level_2015}.
+Deep learning, which uses deep neural networks as a model, has shown good performance on many challenging artificial intelligence and machine learning tasks\new{,} such as image recognition \cite{lecun_gradient-based_1998,krizhevsky_imagenet_2012}, speech recognition \cite{hinton_deep_2012}, and reinforcement learning tasks \cite{mnih_playing_2013,mnih_human-level_2015}.
 In particular, convolutional neural networks (CNNs) \cite{lecun_gradient-based_1998} have seen huge success in image recognition tasks in the \new{past} few years and are applied to various computer vision \new{applications} \cite{vinyals_show_2015,zhang_colorful_2016}.
 A commonly used CNN architecture consists \new{mostly} of several convolutions, pooling, and fully connected layers.
 Several recent studies focus on developing \new{a} novel CNN architecture that achieves higher classification accuracy, e.g., GoogleNet \cite{szegedy_going_2015}, ResNet \cite{he_deep_2016}, and DensNet \cite{huang_densely_2016}.
@@ -36,16 +36,16 @@ This section briefly reviews the related work on \new{automatic} neural network 
 
 \subsection{Hyperparameter Optimization}
 We can consider \new{neural} network architecture design as the model selection or hyperparameter optimization problem from \new{a} machine learning perspective. There are many hyperparameter tuning methods for the machine learning algorithm\new{,} such as grid search, gradient search \cite{bengio_gradient-based_2000}, random search \cite{bergstra_random_2012}, and \new{Bayesian optimization-based} methods \cite{hutter_sequential_2011,snoek_practical_2012}. Naturally, evolutionary algorithms have also been applied to \new{hyperparameter} optimization problems \cite{loshchilov_cma-es_2016}. In the machine learning community, Bayesian optimization is often used and \new{has} shown good performance in several datasets. Bayesian optimization is a global optimization method of black-box and noisy objective functions, \new{and it} maintains a surrogate model learned by using previously evaluated solutions. A Gaussian process is usually adopted as the surrogate model \cite{snoek_practical_2012}, which can easily handle the uncertainty and noise of the objective function.
-Bergstra et al. \cite{bergstra_algorithms_2011} have proposed the Tree-structured Parzen estimator (TPE) and shown better results than manual search and random search.
+Bergstra et al. \cite{bergstra_algorithms_2011} have proposed the \nnew{t}ree-structured Parzen estimator (TPE) and shown better results than manual search and random search.
 They have also proposed a meta-modeling approach \cite{bergstra_making_2013} based on the TPE for supporting automatic hyperparameter optimization. 
 Snoek et al. \cite{snoek_scalable_2015} used a deep neural network instead of the Gaussian process to reduce the computational cost for the surrogate model building and succeeded \new{in improving} the scalability.
 
 The hyperparameter optimization approach often tunes \new{predefined} hyperparameters\new{,} such as the numbers of layers and neurons, and the type of activation functions. \new{Although} this method has seen success, it is hard to design more flexible architectures from scratch.
 
 \subsection{Evolutionary Neural Networks}
-Evolutionary algorithms have been used to optimize \new{neural} network architectures so far \cite{schaffer_combinations_1992,stanley_evolving_2002}. \new{Traditional} approaches are not suitable for \new{model} deep neural network architecture design \new{because} they usually optimize the number and connectivity of low-level neurons.
+Evolutionary algorithms have been used to optimize \new{neural} network architectures so far \cite{schaffer_combinations_1992,stanley_evolving_2002}. \new{Traditional} approaches are not suitable for \nnew{designing deep neural network architectures} \new{because} they usually optimize the number and connectivity of low-level neurons.
 
-Recently, Fernando et al. \cite{fernando_convolution_2016} \new{proposed} \new{differentiable} pattern-producing networks (DPPNs) \new{for optimizing the} weights of a denoising autoencoder. The DPPN is a differentiable version of the compositional pattern-producing networks (CPPNs) \cite{stanley_compositional_2007}. This method focuses on the effectiveness of \new{indirect} coding for weight optimization. That is, the general structure of the network should be predefined.
+Recently, Fernando et al. \cite{fernando_convolution_2016} \new{proposed} \new{differentiable} pattern-producing networks (DPPNs) \new{for optimizing the} weights of a denoising autoencoder. The DPPN is a differentiable version of the compositional pattern-producing networks (CPPNs) \cite{stanley_compositional_2007}. This \nnew{paper} focuses on the effectiveness of \new{indirect} coding for weight optimization. That is, the general structure of the network should be predefined.
 
 Verbancsics et al. \cite{verbancsics_generative_2013,verbancsics_image_2015} have optimized the weights of \new{artificial} neural networks and CNN by using the hypercube-based neuroevolution of augmenting topologies (HyperNEAT) \cite{stanley_hypercube-based_2009}. However, to the best of our knowledge, \new{the} methods with HyperNEAT have not achieved \new{competitive} performance compared with the state-of-the-art methods. Also, these methods require \new{an architecture that has been predefined by human experts.} Thus\new{,} it is hard to design neural network architectures from scratch.
 
@@ -62,22 +62,23 @@ Unlike these approaches, our approach uses \new{direct} coding based on Cartesia
 \new{In addition}, we introduce \new{relatively} \new{highly functional} modules\new{,} such as convolutional blocks and tensor concatenations\new{,} to find better CNN architectures efficiently.
 
 \begin{figure}[t]
-\includegraphics[width=0.99\linewidth]{images/overview.eps}
-\caption{Overview of our method. Our method represents \new{CNN} architectures based on Cartegian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.}
+\includegraphics[width=0.99\linewidth, bb=0 0 526 276]{images/overview.pdf}
+\caption{Overview of our method. Our method represents \new{CNN} architectures based on Cartesian genetic programming. The CNN architecture is trained on a learning task and assigned the validation accuracy of the trained model as the fitness. The evolutionary algorithm searches the better architectures.}
 \label{overview}
 \end{figure}
 
 \begin{figure*}[t]
-\includegraphics[width=0.99\linewidth]{images/genotype.eps}
+\includegraphics[width=0.99\linewidth, bb=0 0 781 283]{images/genotype.pdf}
 \caption{Example of a genotype and a phenotype. The genotype (left) defines the CNN architecture (right). In this case, node No. 5 on the left side is \new{an inactive node.} The summation node performs \new{max pooling} to \new{the} first input so as to get the same input tensor sizes.}
 \label{genotype}
 \end{figure*}
+
 
 % ----------------------------------------------------------------------------------------------------
 \section{CNN Architecture Design Using Cartesian Genetic Programming}
 Our method directly encodes the CNN architectures based on CGP \cite{harding_evolution_2008,miller_redundancy_2006,miller_cartesian_2000} and uses the \new{highly functional} modules as the node functions.
 The CNN architecture defined by \new{CGP} is trained using \new{a} training dataset, \new{and} the validation accuracy is assigned as the fitness of the architecture. Then\new{,} the architecture is optimized to maximize the validation accuracy by the evolutionary algorithm.
-Fig.~\ref{overview} illustrates \new{an} overview of our method.
+Figure \ref{overview} illustrates \new{an} overview of our method.
 
 In this section, we describe the network representation and the evolutionary algorithm used in the proposed method in detailed.
 
@@ -87,23 +88,26 @@ We use the CGP encoding scheme, representing the program as \new{directed} acycl
 Referring \new{to} the modern CNN architectures, we select the \new{highly functional} modules as the node function.
 The \new{frequently used} processings in the CNN are convolution and pooling; convolution processing uses a local connectivity and spatially shares the learnable weights, and pooling is nonlinear down-sampling.
 We prepare the six types of node functions called ConvBlock, ResBlock, \new{max pooling, average pooling}, concatenation, and summation.
-These nodes operate the \new{three-dimensional (3-D)} tensor defined by the dimensions of the row, column, and channel. Also, we call this 3-D tensor \new{a feature map}, where a feature map indicates a matrix of the row and column as \new{an} image plane.
+These nodes operate the \new{three-dimensional (3-D)} tensor defined by the dimensions of the row, column, and channel. Also, we call this 3-D tensor \nnew{feature maps}, where a feature map indicates a matrix of the row and column as \new{an} image plane.
 
 The ConvBlock consists of \new{standard} convolution processing with \new{a} stride of 1 followed by batch normalization \cite{ioffe_batch_2015} and rectified linear units (ReLU) \cite{nair_rectified_2010}. In the ConvBlock, we pad the outside of input feature maps with zero values before the convolution operation so as to \new{maintain} the row and column sizes of the output. 
 As a result, the $M \times N \times C$ input feature maps are transformed \new{into} $M \times N \times C'$ output ones, where $M$, $N$, $C$, and $C'$ are the numbers of rows, columns, input channels, and output channels, respectively.
 We prepare several ConvBlocks with the different output channels and \new{the} receptive field size (kernel size) in the function set of CGP.
 
-The ResBlock is composed of a convolution processing, batch normalization, ReLU, and tensor summation. A ResBlock architecture is shown in Figure \ref{resblock}.
+The ResBlock is composed of a convolution processing, batch normalization, ReLU, and tensor summation. A ResBlock architecture is shown in Fig.~\ref{resblock}.
 The ResBlock performs identity mapping by shortcut connections as described in \cite{he_deep_2016}.
 The row and column sizes of the input are preserved in the same way as ConvBlock after convolution.
-The output feature maps of the ResBlock are calculated by the ReLU activation and the summation with the input feature maps and the processed feature maps as shown in Figure \ref{resblock}.
+The output feature maps of the ResBlock are calculated by the ReLU activation and the summation with the input feature maps and the processed feature maps as shown in Fig.~\ref{resblock}.
 In the ResBlock, the $M \times N \times C$ input feature maps are transformed into the $M\times N\times C'$ output ones.
 We also prepare several ResBlocks with the different output channels and \new{the} receptive field size in the function set of CGP.
 
 \begin{figure}[t]
-\includegraphics[scale=0.45]{images/resblock.eps}
+%\includegraphics[scale=0.45]{images/resblock.eps}
+\begin{center}
+\includegraphics[scale=0.45, bb=0 0 242 339]{images/resblock.pdf}
 \caption{ResBlock architecture.}
 \label{resblock}
+\end{center}
 \end{figure}
 
 The \new{max} and \new{average poolings} perform a max and average operation, respectively, over the local neighbors of the feature maps. We use the pooling with the $2 \times 2$ receptive field size and the stride size 2.
@@ -120,24 +124,6 @@ In the summation operation, the size of the output feature maps are $\min (M_1, 
 
 The output node represents \new{the} softmax function with the number of classes. The outputs fully connect to all elements of the input.
 The node functions used in the experiments are displayed in Table \ref{tbl:node_func}.
-
-\begin{table}[tb]
-\caption{The node functions and abbreviated symbols used in the experiments.}
-\label{tbl:node_func}
-\begin{tabular}{l|l|l} \hline
-Node type & Symbol & Variation \\ \hline
-ConvBlock & CB($C'$, $k$) & $C' \in \{32, 64, 128\}$ \\
-                 &                      & $k \in \{ 3\times3, 5 \times 5 \}$ \\
-ResBlock   & RB($C'$, $k$) & $C' \in \{32, 64, 128\}$ \\
-                 &                      & $k \in \{ 3 \times 3, 5 \times 5 \}$ \\
-\new{Max pooling}       & MP              & -- \\
-\new{Average pooling} & AP              & -- \\
-Summation      & Sum     & -- \\
-Concatenation & Concat & -- \\ \hline
-\multicolumn{3}{l}{$C'$: Number of output channels} \\
-\multicolumn{3}{l}{$k$: Receptive field size (kernel size)}
-\end{tabular}
-\end{table}
 
 \subsection{Evolutionary Algorithm}
 We use a point mutation as the genetic operator in the same way as the standard CGP. The type and connections of each node randomly change to valid values according to a mutation rate. 
@@ -160,6 +146,23 @@ The procedure of our modified algorithm is as follows:
   \item Return to step $2$ until a stopping criterion is satisfied.
 \end{enumerate}
 
+\begin{table}[tb]
+\caption{The node functions and abbreviated symbols used in the experiments.}
+\label{tbl:node_func}
+\begin{tabular}{l|l|l} \hline
+Node type & Symbol & Variation \\ \hline
+ConvBlock & CB ($C'$, $k$) & $C' \in \{32, 64, 128\}$ \\
+                 &                      & $k \in \{ 3\times3, 5 \times 5 \}$ \\
+ResBlock   & RB ($C'$, $k$) & $C' \in \{32, 64, 128\}$ \\
+                 &                      & $k \in \{ 3 \times 3, 5 \times 5 \}$ \\
+\new{Max pooling}       & MP              & -- \\
+\new{Average pooling} & AP              & -- \\
+Summation      & Sum     & -- \\
+Concatenation & Concat & -- \\ \hline
+\multicolumn{3}{l}{$C'$: Number of output channels} \\
+\multicolumn{3}{l}{$k$: Receptive field size (kernel size)}
+\end{tabular}
+\end{table}
 
 % ----------------------------------------------------------------------------------------------------
 \section{Experiments and Results}
@@ -179,8 +182,8 @@ In the small-data scenario, we randomly \new{sample} $4,500$ images for the trai
   \label{cgp_param}
   \begin{tabular}{l|l} \hline
     Parameters & Values \\ \hline
-   \# Generations & $300$ (default scenario) \\ 
-                          & $2000$ (small-data scenario) \\ 
+%   \# Generations & $300$ (default scenario) \\ 
+%                          & $2000$ (small-data scenario) \\ 
    Mutation rate & $0.05$ \\
    \#  Rows ($N_r$) & $5$ \\
    \#  Columns ($N_c$) & $30$ \\
@@ -199,29 +202,30 @@ We use the data augmentation method based on \cite{he_deep_2016}: padding $4$ pi
 
 The parameter setting for \new{CGP} is shown in Table \ref{cgp_param}. We use the relatively larger number of columns than the number of rows to generate deep architectures \new{that are} likely.
 The offspring size \new{of} $\lambda$ is set to two\new{;} that is the same number of GPUs in our experimental machines.
-The numbers of generations are $300$ and $2,000$ for the default and small-data \new{scenarios}, respectively. \shin{It may change...}
 We test two node function sets called ConvSet and ResSet for our method.
-The ConvSet contains ConvBlock,  \new{Max Pooling, Average Pooling}, Summation, and Concatenation in Table \ref{tbl:node_func}, and the ResSet contains ResBlock,  \new{Max Pooling, Average Pooling}, Summation, and Concatenation.
+The ConvSet contains ConvBlock,  \new{Max pooling, Average pooling}, Summation, and Concatenation in Table \ref{tbl:node_func}, and the ResSet contains ResBlock,  \new{Max pooling, Average pooling}, Summation, and Concatenation.
 The difference between these two function sets is whether we adopt ConvBlock or ResBlock.
+The numbers of generations are \nnew{$500$ for ConvSet, $300$ for ResSet in the default scenario, and $1,500$ in the small-data scenario}, respectively.
 
 After the CGP process, we re-train the best CNN architecture using each training \new{image} ($50,000$ for the default scenario and $5,000$ for the small-data scenario)\new{,} and \new{we} calculate the classification accuracy for the $10,000$ test images to evaluate the constructed CNN architectures.
-In this re-training phase, we optimize the weights of the obtained architecture with a different training schedule; we set a learning rate to $0.01$ during \new{the} first $50$ epochs and then reduce \new{it} to $0.001$ during \new{the} subsequent $50$ epochs. The other parameters are \new{the} same as \new{those} used in the CGP process.
-\todo{Write about re-training method, e.g., momentum SGD...}
-\note{In this re-training phase, we optimize the weights of the obtained architecture with a different training schedule; we use SGD with a mini-batch size of $128$, a weight decay of $10^{-4}$, and a momentum of $0.9$. We set an initial learning rate to $0.01$, then divide it by a factor of $10$ at $250$ and $375$ epochs, and train the model for $500$ epochs. The other parameters are same as used in the CGP process.}
+
+%In this re-training phase, we optimize the weights of the obtained architecture with a different training schedule; we set a learning rate to $0.01$ during \new{the} first $50$ epochs and then reduce \new{it} to $0.001$ during \new{the} subsequent $50$ epochs. The other parameters are \new{the} same as \new{those} used in the CGP process.
+\nnew{In this re-training phase, we optimize the weights of the obtained architecture for $500$ epochs with a different training procedure; we use} \nnew{SGD with a momentum of $0.9$, a mini-batch size of $128$, and a weight decay of $5.0 \times 10^{-4}$.}
+\nnew{We start a learning rate of $0.01$ and set it to $0.1$ at $5$th epoch, then we reduce it to $0.01$ and $0.001$ at $250$th and $375$th epochs, respectively. This learning rate schedule is based on the reference \cite{he_deep_2016}.}
 
 We \new{have} implemented our methods using the Chainer \cite{tokui_chainer:_2015} (version 1.16.0) framework and \new{run} the experiments on the machines with $3.2$GHz CPU, $32$GB RAM, and two NVIDIA GeForce GTX 1080 (or two GTX 1070) GPUs.
-\new{It is possible that the large architectures generated by the CGP process cannot run in the environment.}
+\new{It is possible that the large architectures generated by the CGP process cannot run in the environment} \nnew{due to the GPU memory limitation.}
 In that case, we assign a zero fitness to the candidate solution.
 
-\begin{figure*}[!t]
+\begin{figure*}[t]
  \begin{minipage}[b]{0.45\linewidth}
   \centering
-  \includegraphics[keepaspectratio, scale=0.4]{images/modelA.eps}
+  \includegraphics[keepaspectratio, scale=0.4, bb=0 0 600 827]{images/modelA.pdf}
   \subcaption{CGP-CNN (ConvSet)}\label{modelA}
  \end{minipage}
  \begin{minipage}[b]{0.45\linewidth}
   \centering
-  \includegraphics[keepaspectratio, scale=0.4]{images/modelB.eps}
+  \includegraphics[keepaspectratio, scale=0.4, bb=0 0 128 814]{images/modelB.pdf}
   \subcaption{CGP-CNN (ResSet)}\label{modelB}
  \end{minipage}
  \caption{The CNN architectures designed by our method on the default scenario.}\label{models}
@@ -254,23 +258,25 @@ In Table \ref{results}, the numbers of learnable weight parameters in the models
    ResNet \cite{he_deep_2016} & $6.61$ & $1.7$ \\
    MetaQNN \cite{baker_designing_2016} \footnotemark & $9.09$ & $3.7$ \\
    Neural Architecture Search \cite{zoph_neural_2016} & $3.84$ & $32.0$ \\
-   CGP-CNN (ConvSet) & $7.89$ & $1.52$ \\
+   CGP-CNN (ConvSet) & $6.75$ & $1.52$ \\
    CGP-CNN (ResSet) & $5.98$ & $1.68$ \\ \hline
    %\multicolumn{1}{l}{*The mean error rate and the number of parameters of top $5$ models.} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} \\
   \end{tabular}
 \end{table}
-\footnotetext[1]{The mean error rate and the number of parameters of \new{the} top \new{five} models are shown.}
-\footnotetext[2]{We \new{have} implemented the VGG net \cite{simonyan_very_2014} for the CIFAR-10 dataset \new{because} the VGG net is not applied to the CIFAR-10 dataset in \cite{simonyan_very_2014}. The architecture of the VGG is identical with  \new{configuration} D in \cite{simonyan_very_2014}. We denote this model as VGG in this paper.}
+\footnotetext[1]{We \new{have} implemented the VGG net \cite{simonyan_very_2014} for the CIFAR-10 dataset \new{because} the VGG net is not applied to the CIFAR-10 dataset in \cite{simonyan_very_2014}. The architecture of the VGG is identical with  \new{configuration} D in \cite{simonyan_very_2014}. We denote this model as VGG in this paper.}
+\footnotetext[2]{The mean error rate and the number of parameters of \new{the} top \new{five} models are shown.}
+
 
 As can be seen in Table \ref{results}, the error rates of our methods are competitive with the state-of-the-art methods.
 In particular, CGP-CNN (ResSet) outperforms all hand-crafted models, and the \new{architectures constructed} by \new{using} our method have a good balance between classification \new{errors} and the number of parameters. The Neural Architecture Search achieved the best error rate\new{,} but this method used 800 GPUs for the architecture search. Our method could find a competitive architecture with \new{a} reasonable machine resource.
 
-Fig.~\ref{models} shows the architectures constructed by CGP-CNN (ConvSet) and CGP-CNN (ResSet). We can observe that these architectures are quite different; the summation and concatenation nodes are not used in CGP-CNN (ResSet), whereas these nodes \new{are} frequently used in CGP-CNN (ConvSet). These nodes lead the wide network; therefore\new{,} the network of CGP-CNN (ConvSet) is \new{a} wider structure than that of CGP-CNN (ResSet).
+Figure \ref{models} shows the architectures constructed by CGP-CNN (ConvSet) and CGP-CNN (ResSet). We can observe that these architectures are quite different; the summation and concatenation nodes are not used in CGP-CNN (ResSet), whereas these nodes \new{are} frequently used in CGP-CNN (ConvSet). These nodes lead the wide network; therefore\new{,} the network of CGP-CNN (ConvSet) is \new{a} wider structure than that of CGP-CNN (ResSet).
 
-Added to this, we observe that \new{CGP-CNN (ResSet)} architecture has a similar feature with the ResNet \cite{he_deep_2016}. The ResNet consists of a repetition of two types of modules: the module \new{with} several convolutions with the shortcut connections without down-sampling, and down-sampling convolution with \new{a} stride of $2$.  Although our method cannot perform down-sampling in the ConvBlock and the ResBlock, we can see from Figure \ref{models} that CGP-CNN (ResSet) uses average pooling as an alternative to the down-sampling convolution. Furthermore, \new{CGP-CNN (ResSet)} has some convolutions with the shortcut \new{connections,} \new{such as} the ResNet. Based on these observations, we can say that our method can also find the architecture similar to one designed by human experts, and that model shows a better performance.
+Added to this, we observe that \new{CGP-CNN (ResSet)} architecture has a similar feature with the ResNet \cite{he_deep_2016}. The ResNet consists of a repetition of two types of modules: the module \new{with} several convolutions with the shortcut connections without down-sampling, and down-sampling convolution with \new{a} stride of $2$.  Although our method cannot perform down-sampling in the ConvBlock and the ResBlock, we can see from Fig.~\ref{models} that CGP-CNN (ResSet) uses average pooling as an alternative to the down-sampling convolution. Furthermore, \new{CGP-CNN (ResSet)} has some convolutions with the shortcut \new{connections,} \new{such as} \new{ResNet.} Based on these observations, we can say that our method can also find the architecture similar to one designed by human experts, and that model shows a better performance.
 
 Besides, while the ResNet has a very deep $110$-layer architecture, \new{CGP-CNN (ResSet)} has a relatively shallow and wide architecture.
-We guess from this result that the number of output channels of \new{ResBlock} in the \new{proposed method} is one of the contributive parameters for improving the classification accuracy on the CIFAR-10 dataset. To investigate the effectiveness of the number of output channels, we change the number of output channels of ConvBlock in \new{CGP-CNN (ConvSet)} from $\{32, 64, 128\}$ to $\{64, 128, 256, 512\}$. We \new{have run} this modified version of the proposed method by \new{the} 150th generation. \shin{It may change...} \new{It has achieved an} error rate \new{of} $7.25$\% and \new{has} obtained \new{a shallower and wider} architecture.
+We guess from this result that the number of output channels of \new{ResBlock} in the \new{proposed method} is one of the contributive parameters for improving the classification accuracy on the CIFAR-10 dataset.
+%To investigate the effectiveness of the number of output channels, we change the number of output channels of ConvBlock in \new{CGP-CNN (ConvSet)} from $\{32, 64, 128\}$ to $\{64, 128, 256, 512\}$. We \new{have run} this modified version of the proposed method by \new{the} 150th generation. \shin{It may change...} \new{It has achieved an} error rate \new{of} $7.25$\% and \new{has} obtained \new{a shallower and wider} architecture.
 
 %The fitness transition of CGP2CNN (A) and CGP2CNN (B) is shown in Figure \ref{fitness}.
 %While the fitness remains flat from $100$ generation to $250$ generation, the improvement of the fitness is seen in about $300$ generation.
@@ -278,16 +284,17 @@ We guess from this result that the number of output channels of \new{ResBlock} i
 
 \subsection{Result of the Small-data Scenario}
 %For settings of our method, we changed the number of generation to $2,000$. The other experimental settings are the same in the preceding section.
-In the small-data scenario, we compare our method with the VGG and ResNet.
-For \new{VGG}, we \new{have} trained the model for 200 epochs using 5000 training data by SGD with an initial learning rate of 0.01\new{,} and \new{we have} reduced the learning rate by a factor of 10 every 50 epochs.
-For the ResNet, we \new{have} trained the model for 500 epochs using 5000 training data by SGD and started with a learning rate of $0.1$, and then\new{, we have} divided it by \new{$10$} at 250 and 375 epochs. This learning rate schedule is described in \cite{he_deep_2016}.
+In the small-data scenario, we compare our method with \new{VGG} and ResNet.
+%For \new{VGG}, we \new{have} trained the model for 200 epochs using 5,000 training data by SGD with an initial learning rate of 0.01\new{,} and \new{we have} reduced the learning rate by a factor of 10 every 50 epochs.
+\nnew{We have trained \new{VGG} and ResNet models by the same setting of the re-training method in the proposed method; it is based on the training method of the ResNet \cite{he_deep_2016}.}
+%we \new{have} trained the model for 500 epochs using 5,000 training data by SGD and started with a learning rate of $0.1$, and then\new{, we have} divided it by \new{$10$} at 250 and 375 epochs. This learning rate schedule is described in \cite{he_deep_2016}.
 
 Table 4 shows the comparison of error rates \new{in} the small-data scenario. We observe that our methods, CGP-CNN (ConvSet) and CGP-CNN (ResSet), can find better architectures than \new{VGG} and ResNet.
 It is obvious that \new{VGG} and ResNet are inadequate for the small-data scenario \new{because} these architectures are designed for \new{a} relatively large amount of data. \new{Meanwhile}, our method can tune the architecture depending on the data size.
-Fig.~\ref{model_small} illustrates the CGP-CNN (ConvSet) architecture constructed by \new{uisng} the proposed method.
+Figure \ref{model_small} illustrates the CGP-CNN (ConvSet) architecture constructed by \new{using} the proposed method.
 As seen in Fig.~\ref{model_small}, our method \new{has found a} wider structure than that in the default scenario.
 
-Additionally, we \new{have} re-trained this model with the $50,000$ training data and achieved \new{a} $9.2\%$ error rate on the test data. It suggests that the proposed method \new{may be used} to design a relatively good general architecture even with a small dataset.
+Additionally, we \new{have} re-trained this model with the $50,000$ training data and achieved \new{a} \nnew{$8.05\%$} error rate on the test data. It suggests that the proposed method \new{may be used} to design a relatively good general architecture even with a small dataset.
 
 
 \begin{table}[t]
@@ -295,18 +302,12 @@ Additionally, we \new{have} re-trained this model with the $50,000$ training dat
   \label{results_small}
   \begin{tabular}{l|c|c} \hline
    Model & Error rate & \# params ($\times 10^6$) \\ \hline
-   VGG \cite{simonyan_very_2014} & $27.67$ & 15.2 \\
+   VGG \cite{simonyan_very_2014} & $\nnew{24.11}$ & 15.2 \\
    ResNet \cite{he_deep_2016} & $24.10$ & 1.7 \\ 
-   CGP-CNN (ConvSet) & $22.82$  & $3.9$  \\
-   CGP-CNN (ResSet) & $24.50$ & $0.91$ \\ \hline
+   CGP-CNN (ConvSet) & $23.48$  & $3.9$  \\
+   CGP-CNN (ResSet) & $23.47$ & $0.83$ \\ \hline
   \end{tabular}
 \end{table}
-
-\begin{figure}[t]
-\includegraphics[width=0.9\linewidth]{images/model_small.eps}
-\caption{The architecture of CGP-CNN (ConvSet) constructed \new{in} the small-data scenario.}
-\label{model_small}
-\end{figure}
 
 
 % ----------------------------------------------------------------------------------------------------
@@ -317,4 +318,9 @@ We \new{have} constructed the CNN architecture for the image classification task
 
 However, our proposed method requires much computational cost; the experiment on the default scenario needed about \new{a} few weeks in our machine resource. We can reduce the computational time if the training data \new{are} small (\new{such as in} the small-data scenario in the experiment). Thus, one direction of future work is to develop the evolutionary algorithm to reduce the computational cost of the architecture design, e.g., increasing the training data for the neural network as the generation progresses. Another future work is to apply the proposed method to other image \new{datasets} and tasks.
 
+\begin{figure}[t]
+\includegraphics[width=0.9\linewidth, bb=0 0 575 810]{images/model_small.pdf}
+\caption{The architecture of CGP-CNN (ConvSet) constructed \new{in} the small-data scenario.}
+\label{model_small}
+\end{figure}
 
